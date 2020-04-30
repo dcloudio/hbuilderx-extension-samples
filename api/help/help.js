@@ -5,26 +5,26 @@ let hx = require('hbuilderx');
  * @param {String} url
  */
 function openBrowser(url) {
-  var exec = require('child_process').exec;
-  switch (process.platform) {
-    case "darwin":
-      exec('open ' + url);
-      break;
-    case "win32":
-      exec('start ' + url);
-      break;
-    default:
-      exec('xdg-open', [url]);
-  }
+    var exec = require('child_process').exec;
+    switch (process.platform) {
+        case "darwin":
+            exec('open ' + url);
+            break;
+        case "win32":
+            exec('start ' + url);
+            break;
+        default:
+            exec('xdg-open', [url]);
+    }
 }
 
 /**
  * @description 打开帮助页面
  */
 function openHelp() {
-	openBrowser("https://hbuilderx.dcloud.net.cn")
+    openBrowser("https://hbuilderx.dcloud.net.cn")
 }
 
 module.exports = {
-	openHelp
+    openHelp
 };

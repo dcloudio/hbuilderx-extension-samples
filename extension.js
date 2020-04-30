@@ -24,6 +24,7 @@ var getText = require('./api/textEditor/getText.js');
 var uri = require('./api/textEditor/uri.js');
 var DiagnosticCollection = require('./api/languages/DiagnosticCollection.js');
 var help = require('./api/help/help.js');
+var env = require('./api/env/env.js');
 
 //该方法将在插件激活的时候调用
 function activate(context) {
@@ -165,7 +166,15 @@ function activate(context) {
 	// help
 	let open_help = hx.commands.registerCommand("extension.open_help",()=> {
 		help.openHelp()
-	})
+	});
+    // openExternals
+    let openExternal_url = hx.commands.registerCommand('extension.openExternal_url',()=> {
+        env.openExternal("https://www.baidu.com")
+    });
+    // openExternals
+    let openExternal_mail = hx.commands.registerCommand('extension.openExternal_mail',()=> {
+        env.openExternal("mailto:ide@dcloud.io")
+    })
 }
 
 //该方法将在插件禁用的时候调用（目前是在插件卸载的时候触发）
