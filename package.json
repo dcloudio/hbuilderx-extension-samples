@@ -1,0 +1,408 @@
+{
+	"name": "hbuilderx-extension-samples",
+	"description": "HBuilderX插件扩展api示例",
+	"version": "0.0.2",
+	"publisher": "wdl",
+	"engines": {
+		"HBuilderX": "^2.7.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./extension",
+	"activationEvents": [
+		"onCommand:extension.api_commands",
+		"onCommand:extension.api_status_bar_info_message",
+		"onCommand:extension.api_status_bar_warn_message",
+		"onCommand:extension.api_status_bar_error_message",
+		"onCommand:extension.api_status_bar_timeout_message",
+		"onCommand:extension.api_clear_status_bar_message",
+		"onCommand:extension.api_show_error_message",
+		"onCommand:extension.api_show_info_message",
+		"onCommand:extension.api_show_warning_message",
+		"onCommand:extension.api_window_show_quick_pick",
+		"onCommand:extension.api_window_show_input_box",
+		"onCommand:extension.api_get_active_text_editor",
+		"onCommand:extension.api_get_active_text_editor_for_nature",
+		"onCommand:extension.api_get_active_text_editor_for_project_name",
+		"onCommand:extension.api_window_create_output_channel",
+		"onCommand:extension.api_open_text_document",
+		"onCommand:extension.api_on_will_save_text_document",
+		"onCommand:extension.api_on_did_change_text_document",
+		"onCommand:extension.api_workspace_apply_edit",
+		"onCommand:extension.api_workspace_get_configuration",
+		"onCommand:extension.api_workspace_update_configuration",
+		"onCommand:extension.api_workspace_add_configuration",
+		"onCommand:extension.api_text_editor",
+		"onCommand:extension.api_text_editor_linetext",
+		"onCommand:extension.api_text_editor_line_to_upper_case",
+		"onCommand:extension.api_text_editor_indent",
+		"onCommand:extension.api_text_lineFromPosition",
+		"onCommand:extension.api_text_lineAt",
+		"onCommand:extension.api_text_getText",
+		"onCommand:extension.api_uri",
+		"onCommand:extension.api_languages_create_diagnostics_collection",
+		"onCommand:extension.open_help"
+	],
+	"contributes": {
+		"commands": [{
+				"command": "extension.api_commands",
+				"title": "执行内置命令"
+			},
+			{
+				"command": "extension.api_status_bar_info_message",
+				"title": "setStatusBarMessage 状态栏info消息"
+			},
+			{
+				"command": "extension.api_status_bar_warn_message",
+				"title": "setStatusBarMessage 状态栏warn消息"
+			},
+			{
+				"command": "extension.api_status_bar_error_message",
+				"title": "setStatusBarMessage 状态栏error消息"
+			},
+			{
+				"command": "extension.api_status_bar_timeout_message",
+				"title": "setStatusBarMessage 状态栏消息: 2s自动隐藏"
+			},
+			{
+				"command": "extension.api_clear_status_bar_message",
+				"title": "clearStatusBarMessage 清空状态栏消息"
+			},
+			{
+				"command": "extension.api_show_error_message",
+				"title": "showErrorMessage 右下角error通知框"
+			},
+			{
+				"command": "extension.api_show_info_message",
+				"title": "showInformationMessage 右下角info通知框"
+			},
+			{
+				"command": "extension.api_show_warning_message",
+				"title": "showWarningMessage 右下角warning通知框"
+			},
+			{
+				"command": "extension.api_window_show_quick_pick",
+				"title": "showQuickPick 在窗口中间弹出一个可搜索的建议选择列表"
+			},
+			{
+				"command": "extension.api_get_active_text_editor",
+				"title": "getActiveTextEditor 当前激活的编辑器名称"
+			},
+			{
+				"command": "extension.api_get_active_text_editor_for_nature",
+				"title": "getActiveTextEditor 获取项目类型"
+			},
+			{
+				"command": "extension.api_get_active_text_editor_for_project_name",
+				"title": "getActiveTextEditor 获取项目名称"
+			},
+			{
+				"command": "extension.api_window_create_output_channel",
+				"title": "createOutputChannel 创建输出控制台"
+			},
+			{
+				"command": "extension.api_window_show_input_box",
+				"title": "输入框"
+			},
+			{
+				"command": "extension.api_open_text_document",
+				"title": "openTextDocument 打开指定文档"
+			},
+			{
+				"command": "extension.api_on_will_save_text_document",
+				"title": "onWillSaveTextDocument 文档即将要保存的事件"
+			},
+			{
+				"command": "extension.api_on_did_change_text_document",
+				"title": "onDidChangeTextDocument 文档被修改时的事件"
+			},
+			{
+				"command": "extension.api_on_did_save_text_document",
+				"title": "onDidSaveTextDocument 文档被保存时的事件"
+			},
+			{
+				"command": "extension.api_workspace_apply_edit",
+				"title": "applyEdit 执行指定的文档编辑操作"
+			},
+			{
+				"command": "extension.api_workspace_get_configuration",
+				"title": "getCongiguration 根据指定的section获取对应配置"
+			},
+			{
+				"command": "extension.api_workspace_update_configuration",
+				"title": "getCongiguration 根据指定的section更新对应配置"
+			},
+			{
+				"command": "extension.api_workspace_add_configuration",
+				"title": "getCongiguration 插入新值"
+			},
+			{
+				"command": "extension.api_uri",
+				"title": "getActiveTextEditor uri"
+			},
+			{
+				"command": "extension.api_text_editor",
+				"title": "TextEditor"
+			},
+			{
+				"command": "extension.api_text_editor_linetext",
+				"title": "TextEditor 当前光标所在行内容"
+			},
+			{
+				"command": "extension.api_text_editor_line_to_upper_case",
+				"title": "TextEditor 当前选中内容，由小写转换大写"
+			},
+			{
+				"command": "extension.api_text_editor_indent",
+				"title": "TextEditor 获取当前文件缩进符长度"
+			},
+			{
+				"command": "extension.api_text_lineFromPosition",
+				"title": "TextEditor 获取当前光标所在行内容"
+			},
+			{
+				"command": "extension.api_text_lineAt",
+				"title": "TextEditor 获取指定行内容"
+			},
+			{
+				"command": "extension.api_text_getText",
+				"title": "TextEditor 获取指定区域内容"
+			},
+			{
+				"command": "extension.api_languages_create_diagnostics_collection",
+				"title": "创建问题集合"
+			},
+			{
+				"command": "extension.open_help",
+				"title": "HBuilderX插件开发文档"
+			}
+		],
+		"menus": {
+			"explorer/context": [],
+			"menubar/tool": [],
+			"menubar/help": [{
+				"command": "extension.open_help",
+				"title": "HBuilderX插件开发文档",
+				"group": "documents"
+			}],
+			"editor/context": [{
+					"title": "插件api: commands",
+					"group": "z_commands",
+					"id": "builtIn"
+				},
+				{
+					"command": "extension.api_commands",
+					"title": "执行内置命令: 关闭所有打开的编辑器",
+					"group": "builtIn@1"
+				},
+				{
+					"title": "插件api: 状态栏消息",
+					"group": "z_commands",
+					"id": "statusBarMessage"
+				},
+				{
+					"command": "extension.api_status_bar_info_message",
+					"title": "info消息",
+					"group": "statusBarMessage@1"
+				},
+				{
+					"command": "extension.api_status_bar_error_message",
+					"title": "error消息",
+					"group": "statusBarMessage@2"
+				},
+				{
+					"command": "extension.api_status_bar_warn_message",
+					"title": "warning消息",
+					"group": "statusBarMessage@3"
+				},
+				{
+					"command": "extension.api_status_bar_timeout_message",
+					"title": "2s后自动隐藏",
+					"group": "statusBarMessage@4"
+				},
+				{
+					"command": "extension.api_clear_status_bar_message",
+					"title": "清空状态栏消息",
+					"group": "statusBarMessage@5"
+				},
+				{
+					"title": "插件api: 右下角通知框",
+					"group": "z_commands",
+					"id": "message"
+				},
+				{
+					"command": "extension.api_show_error_message",
+					"title": "error通知框",
+					"group": "message@1"
+				},
+				{
+					"command": "extension.api_show_info_message",
+					"title": "info通知框",
+					"group": "message@2"
+				},
+				{
+					"command": "extension.api_show_warning_message",
+					"title": "warning通知框",
+					"group": "message@3"
+				},
+				{
+					"title": "插件api: window",
+					"group": "z_commands",
+					"id": "window"
+				},
+				{
+					"command": "extension.api_window_show_quick_pick",
+					"title": "QuickPick",
+					"group": "window@1"
+				},
+				{
+					"command": "extension.api_window_create_output_channel",
+					"title": "创建输出控制台",
+					"group": "window@2"
+				},
+				{
+					"command": "extension.api_window_show_input_box",
+					"title": "显示输入框",
+					"group": "window@3"
+				},
+				{
+					"title": "插件api: workspace",
+					"id": "workspace",
+					"group": "z_commands"
+				},
+				{
+					"command": "extension.api_open_text_document",
+					"title": "openTextDocument",
+					"group": "workspace@1"
+				},
+				{
+					"command": "extension.api_on_will_save_text_document",
+					"title": "onWillSaveTextDocument",
+					"group": "workspace@2"
+				},
+				{
+					"command": "extension.api_on_did_change_text_document",
+					"title": "onDidChangeTextDocument",
+					"group": "workspace@3"
+				},
+				{
+					"command": "extension.api_on_did_save_text_document",
+					"title": "onDidSaveTextDocument",
+					"group": "workspace@4"
+				},
+				{
+					"command": "extension.api_workspace_apply_edit",
+					"title": "applyEdit",
+					"group": "workspace@5"
+				},
+				{
+					"group": "workspace@6"
+				},
+				{
+					"command": "extension.api_workspace_get_configuration",
+					"title": "获取配置 getConfiguration",
+					"group": "workspace@7"
+				},
+				{
+					"command": "extension.api_workspace_update_configuration",
+					"title": "更新配置 getConfiguration",
+					"group": "workspace@8"
+				},
+				{
+					"command": "extension.api_workspace_add_configuration",
+					"title": "新增配置 getConfiguration",
+					"group": "workspace@9"
+				},
+				{
+					"title": "插件api: getActiveTextEditor",
+					"id": "getActiveTextEditor",
+					"group": "z_commands"
+				},
+				{
+					"command": "extension.api_get_active_text_editor",
+					"title": "显示当前激活的编辑器名称",
+					"group": "getActiveTextEditor@1"
+				},
+				{
+					"command": "extension.api_get_active_text_editor_for_nature",
+					"title": "获取项目类型",
+					"group": "getActiveTextEditor@2"
+				},
+				{
+					"command": "extension.api_get_active_text_editor_for_project_name",
+					"title": "获取项目名称",
+					"group": "getActiveTextEditor@3"
+				},
+				{
+					"title": "插件api: TextEditor",
+					"id": "TextEditor",
+					"group": "z_commands"
+				},
+				{
+					"command": "extension.api_uri",
+					"title": "uri: 显示所有uri信息",
+					"group": "TextEditor@1"
+				},
+				{
+					"group": "TextEditor@1"
+				},
+				{
+					"command": "extension.api_text_editor",
+					"title": "document: 文件编辑器对象",
+					"group": "TextEditor@1"
+				},
+				{
+					"command": "extension.api_text_editor_linetext",
+					"title": "selection: 当前光标所在行内容",
+					"group": "TextEditor@2"
+				},
+				{
+					"command": "extension.api_text_editor_line_to_upper_case",
+					"title": "selection: 当前选中内容，由小写转换大写",
+					"group": "TextEditor@3"
+				},
+				{
+					"command": "extension.api_text_editor_indent",
+					"title": "options: 获取当前文件缩进符长度",
+					"group": "TextEditor@4"
+				},
+				{
+					"group": "TextEditor@5"
+				},
+				{
+					"command": "extension.api_text_lineFromPosition",
+					"title": "lineFromPosition 当前光标所在行内容",
+					"group": "TextEditor@5"
+				},
+				{
+					"command": "extension.api_text_lineAt",
+					"title": "lineAt 获取指定行(第3行)内容",
+					"group": "TextEditor@5"
+				},
+				{
+					"command": "extension.api_text_getText",
+					"title": "getText 获取指定区域内容(0,50)",
+					"group": "TextEditor@5"
+				},
+				{
+					"title": "插件api: 问题集合",
+					"id": "Diagnostic",
+					"group": "z_commands"
+				},
+				{
+					"command": "extension.api_languages_create_diagnostics_collection",
+					"title": "创建问题集合",
+					"group": "Diagnostic@1"
+				},
+				{
+					"group": "z_commands"
+				}
+			]
+		}
+	},
+	"extensionDependencies": [
+		"plugin-manager"
+	],
+	"dependencies": {}
+}
