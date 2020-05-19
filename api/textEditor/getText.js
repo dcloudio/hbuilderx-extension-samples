@@ -8,7 +8,7 @@ function getText() {
 	activeEditor.then(function(editor) {
 		// 获取指定区域内的文本
 		let text = editor.document.getText({
-			start: 0,
+			start: 0, 
 			end: 50
 		});
 		
