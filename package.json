@@ -44,7 +44,9 @@
         "onCommand:extension.api_languages_create_diagnostics_collection",
         "onCommand:extension.open_help",
         "onCommand:extension.openExternal_url",
-        "onCommand:extension.openExternal_mail"
+        "onCommand:extension.openExternal_mail",
+        "onCommand:extension.clipboard_write",
+        "onCommand:extension.clipboard_read"
     ],
     "contributes": {
         "commands": [{
@@ -185,6 +187,14 @@
             },
             {
                 "command": "extension.openExternal_mail",
+                "title": "打开外部链接"
+            },
+            {
+                "command": "extension.clipboard_write",
+                "title": "打开外部链接"
+            },
+            {
+                "command": "extension.clipboard_read",
                 "title": "打开外部链接"
             }
         ],
@@ -419,6 +429,16 @@
                     "command": "extension.openExternal_mail",
                     "title": "发送email",
                     "group": "env@2"
+                },
+                {
+                    "command": "extension.clipboard_write",
+                    "title": "写入剪切板",
+                    "group": "env@3"
+                },
+                {
+                    "command": "extension.clipboard_read",
+                    "title": "读取剪切板",
+                    "group": "env@4"
                 },
                 {
                     "group": "z_commands"
