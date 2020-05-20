@@ -51,6 +51,11 @@
     "onCommand:extension.api_clipboard_read"
   ],
   "contributes": {
+    "snippets": [{
+        "language": "python",
+        "path": "./snippets/python.json"
+      }
+    ],
     "configuration": {
       "title": "hbuilderx-extension-samples",
       "properties": {

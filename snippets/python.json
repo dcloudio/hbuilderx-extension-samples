@@ -1,0 +1,972 @@
+{
+    "Python": {
+        "prefix": "py",
+        "body": ["#!/usr/bin/env python", "#-*- coding:utf-8 -*-", "", "$1"]
+    },
+    "doc": {
+        "prefix": "doc str",
+        "body": ["\"\"\"${1:document String}\"\"\""]
+    },
+    "@wraps": {
+        "prefix": "@wraps",
+        "body": ["@wraps($1)"]
+    },
+    "@classmethod": {
+        "prefix": "@classmethod",
+        "body": ["@classmethod"]
+    },
+    "@staticmethod": {
+        "prefix": "@staticmethod",
+        "body": ["@staticmethod"]
+    },
+    "import": {
+        "prefix": "import",
+        "body": ["import ${1:name}", "$0"]
+    },
+    "from import": {
+        "prefix": "from import",
+        "body": ["from ${1:name} import ${1:name}", "$0"]
+    },
+    "print": {
+        "prefix": "p",
+        "body": ["print($1)"]
+    },
+    "print/format": {
+        "prefix": "pf",
+        "body": ["print(\"${1:{0}}\".format(${2:str}))"]
+    },
+    "pprint": {
+        "prefix": "pprint",
+        "body": ["pprint.pprint($1)"]
+    },
+    "return": {
+        "prefix": "return",
+        "body": ["return ${1:value}"]
+    },
+    "assert": {
+        "prefix": "assert",
+        "body": ["assert ${1:value}"]
+    },
+    "raise": {
+        "prefix": "raise",
+        "body": ["raise ${1:value}"]
+    },
+    "int": {
+        "prefix": "int",
+        "body": ["int(${1:str})"]
+    },
+    "long": {
+        "prefix": "long",
+        "body": ["login(${1:str}, base=10)"]
+    },
+    "float": {
+        "prefix": "float",
+        "body": ["float($1)"]
+    },
+    "str": {
+        "prefix": "str",
+        "body": ["str($1)"]
+    },
+    "round": {
+        "prefix": "round",
+        "body": ["round($1,$0)"]
+    },
+    "isinstance ": {
+        "prefix": "isinstance",
+        "body": ["isinstance(${1:value},${0:data_type)"]
+    },
+    "repr": {
+        "prefix": "repr",
+        "body": ["repr($1)"]
+    },
+    "eval": {
+        "prefix": "eval",
+        "body": ["eval($1)"]
+    },
+    "tuple": {
+        "prefix": "tuple",
+        "body": ["tuple($1)"]
+    },
+    "list": {
+        "prefix": "list",
+        "body": ["list($1)"]
+    },
+    "set": {
+        "prefix": "set",
+        "body": ["set($1)"]
+    },
+    "dict": {
+        "prefix": "dict",
+        "body": ["dict($1)"]
+    },
+    "frozenset": {
+        "prefix": "frozenset",
+        "body": ["frozenset($1)"]
+    },
+    "chr": {
+        "prefix": "chr",
+        "body": ["chr($1)"]
+    },
+    "unichr": {
+        "prefix": "unichr",
+        "body": ["unichr($1)"]
+    },
+    "ord": {
+        "prefix": "ord",
+        "body": ["ord($1)"]
+    },
+    "hex": {
+        "prefix": "hex",
+        "body": ["hex($1)"]
+    },
+    "oct": {
+        "prefix": "oct",
+        "body": ["oct($1)"]
+    },
+    "format": {
+        "prefix": "format",
+        "body": ["format($1)"],
+        "triggerAssist": false
+    },
+    "join": {
+        "prefix": "join",
+        "body": ["'$1'.join($0)"]
+    },
+    "replace": {
+        "prefix": "replace",
+        "body": ["${1:str}.replace(\"${2:str1}\",\"${3:str2}\")"]
+    },
+    "len": {
+        "prefix": "len",
+        "body": ["len($1)"]
+    },
+    "max": {
+        "prefix": "max",
+        "body": ["max($1)"]
+    },
+    "min": {
+        "prefix": "min",
+        "body": ["min($1)"]
+    },
+    "lower": {
+        "prefix": "lower",
+        "body": ["lower()"],
+        "description": "字符串转为小写"
+    },
+    "sum": {
+        "prefix": "sum",
+        "body": ["sum($1)"]
+    },
+    "reversed": {
+        "prefix": "reversed",
+        "body": ["reversed($1)"]
+    },
+    "del": {
+        "prefix": "del",
+        "body": ["del"]
+    },
+    "count": {
+        "prefix": "count",
+        "body": ["count($1)"]
+    },
+    "type": {
+        "prefix": "type",
+        "body": ["type($1)"]
+    },
+    "super": {
+        "prefix": "super()",
+        "body": ["super()"]
+    },
+    "xrange": {
+        "prefix": "xrange()",
+        "body": ["xrange($1)"]
+    },
+    "range": {
+        "prefix": "range()",
+        "body": ["range($1)"]
+    },
+    "sorted": {
+        "prefix": "sorted()",
+        "body": ["sorted($1)"]
+    },
+    "reduce": {
+        "prefix": "reduce()",
+        "body": ["reduce(${1:function},${2:iterable})"]
+    },
+    "zip": {
+        "prefix": "zip",
+        "body": ["zip($1,$2)"]
+    },
+    "list derivation": {
+        "prefix": "list derivation",
+        "body": ["${1:list_name} = [ i for i in ${2:list_name} ]"],
+        "description": "列表推导式"
+    },
+    "list derivation if": {
+        "prefix": "list derivation if",
+        "body": ["${1:list_name} = [ i for i in ${2:list_name} if ${3:String} in i ]"],
+        "description": "列表推导式，包含if条件"
+    },
+    "dict.clear()": {
+        "prefix": "dict.clear()",
+        "body": ["${1:dict}.clear()"]
+    },
+    "dict.copy()": {
+        "prefix": "dict.copy()",
+        "body": ["${1:dict}.copy()"]
+    },
+    "dict.fromkeys()": {
+        "prefix": "dict.fromkeys()",
+        "body": ["dict.fromkeys(${1:dictname})"]
+    },
+    "dict.get()": {
+        "prefix": "dict.get()",
+        "body": ["${1:dict}..get(${1:value})"]
+    },
+    "dict.has_key()": {
+        "prefix": "dict.has_key()",
+        "body": ["${1:dict}.has_key(${2:value})"]
+    },
+    "dict.items()": {
+        "prefix": "dict.items()",
+        "body": ["${1:dict}.items()"]
+    },
+    "dict.setdefault()": {
+        "prefix": "dict.setdefault()",
+        "body": ["${1:dict}.setdefault($2,$0)"]
+    },
+    "dict.update()": {
+        "prefix": "dict.update()",
+        "body": ["${1:dict}.update(${2:dict2})"]
+    },
+    "dict.values()": {
+        "prefix": "dict.values()",
+        "body": ["${1:dict}.values()"]
+    },
+    "dict.pop()": {
+        "prefix": "dict.pop()",
+        "body": ["${1:dict}.pop(${2:value})"]
+    },
+    "dict.popitem()": {
+        "prefix": "dict.popitem()",
+        "body": ["${1:dict}.popitem()"]
+    },
+    "enumerate": {
+        "prefix": "for in enumerate",
+        "body": ["for idx, val in enumerate(${1:data}, 1):", "\t${0:print(idx,val)}"]
+    },
+    "map": {
+        "prefix": "map()",
+        "body": ["map(${1:function}, ${2:iterable})"]
+    },
+    "for in": {
+        "prefix": "for",
+        "body": ["for ${1:target_list} in ${2:expression_list}:", "\t${0:pass}"]
+    },
+    "for else": {
+        "prefix": "for else",
+        "body": ["for ${1:target_list} in ${2:expression_list}:", "\t${3:pass}", "else:", "\t${0:pass}"]
+    },
+    "yield": {
+        "prefix": "yield",
+        "body": ["yield"]
+    },
+    "while": {
+        "prefix": "while",
+        "body": ["while ${1:condition}:", "\t${0:pass}"]
+    },
+    "break": {
+        "prefix": "break",
+        "body": ["break"]
+    },
+    "continue": {
+        "prefix": "continue",
+        "body": ["continue"]
+    },
+    "if": {
+        "prefix": "if",
+        "body": ["if ${1:expression}:", "\t${2:pass}"]
+    },
+    "if/else": {
+        "prefix": "if/else",
+        "body": ["if ${1:condition}", "\t${2:pass}", "else:", "\t${0:pass}"]
+    },
+    "if/elif/else": {
+        "prefix": "if/elif/else",
+        "body": ["if ${1:condition}", "\t${2:pass}", "elif ${3:condition}:", "\t${4:pass}", "else:", "\t${0:pass}"]
+    },
+    "if in": {
+        "prefix": "if in",
+        "body": ["if ${1:String} in ${2:String}:", "\t${2:pass}"]
+    },
+    "if not": {
+        "prefix": "if not",
+        "body": ["if not ${1:String}:", "\t${0:pass}"]
+    },
+    "if not in": {
+        "prefix": "if not in",
+        "body": ["if ${1:String} not in ${2:String}:", "\t${2:pass}"]
+    },
+    "def function": {
+        "prefix": "def",
+        "body": ["def ${1:funcname}($2):", "\t\"\"\"${2: Documentation Strings}\"\"\"", "\t${0:pass}"]
+    },
+    "def function class": {
+        "prefix": "def (class method)",
+        "body": ["def ${1:funcname}(self):", "\t\"\"\"${2: Documentation Strings}\"\"\"", "\t${0:pass}"]
+    },
+    "def args kwargs": {
+        "prefix": "def function(*args, **kwargs)",
+        "body": ["def ${1:funcname}(*args, **kwargs):", "\t\"\"\"${2: Documentation Strings}\"\"\"", "\t${0:pass}"]
+    },
+    "__init__()": {
+        "prefix": "__init__()",
+        "body": ["def __init__(self,$1):", "\t${0:pass}"]
+    },
+    "__set__()": {
+        "prefix": "__set__()",
+        "body": ["def __set__(self,$1):", "\t${0:pass}"]
+    },
+    "__delete__()": {
+        "prefix": "__delete__()",
+        "body": ["def __delete__(self,$1):", "\t${0:pass}"]
+    },
+    "__new__()": {
+        "prefix": "__new__()",
+        "body": ["def __new__(self,$1):", "\t${0:pass}"]
+    },
+    "__call__()": {
+        "prefix": "__call__()",
+        "body": ["def __call__(self,$1):", "\t${0:pass}"]
+    },
+    "__get__()": {
+        "prefix": "__get__()",
+        "body": ["def __get__(self,$1):", "\t${0:pass}"]
+    },
+    "def decorator": {
+        "prefix": "def decorator",
+        "body": ["def ${1:funcname}(${2:argv}):", "\tdef ${3:funcname}():", "\t\t${4:pass}", "\treturn ${0:funcname}"],
+        "description": "装饰器"
+    },
+    "lambda": {
+        "prefix": "lambda",
+        "body": ["lambda ${1:parameter_list}: ${2:expression}"]
+    },
+    "class": {
+        "prefix": "cls",
+        "body": ["class ${1:classname}:", "\t\"\"\"${2: Documentation Strings}\"\"\"", "\t", "\tdef __init__(self):",
+            "\t\t${3:pass}", "\t", "\tdef ${4:funcname}(self):", "\t\t${0:pass}"
+        ]
+    },
+    "try/except": {
+        "prefix": "try/except",
+        "body": ["try:", "\t${1:pass}", "except Exception as e:", "\t${2:pass}"]
+    },
+    "try/except/else": {
+        "prefix": "try/except/else",
+        "body": ["try:", "\t${1:pass}", "except Exception as e:", "\t${2:pass}", "else:", "\t${0:pass}"]
+    },
+    "try/except/else/finally": {
+        "prefix": "try/except/else/finally",
+        "body": ["try:", "\t${1:pass}", "except Exception as e:", "\t${2:pass}", "else:", "\t${3:pass}", "finally:",
+            "\t${0:pass}"
+        ]
+    },
+    "try/finally": {
+        "prefix": "try/finally",
+        "body": ["try:", "\t${1:pass}", "finally:", "\t${2:pass}"]
+    },
+    "try/except/finally": {
+        "prefix": "try/except/finally",
+        "body": ["try:", "\t${1:pass}", "except Exception as e:", "\t${2:pass}", "finally:", "\t${0:pass}"]
+    },
+    "file/read": {
+        "prefix": "read/file",
+        "body": ["with open(${1:filename},\"r\",encoding=\"utf-8\") as f:", "\t${0:data}=f.read()"]
+    },
+    "file/write": {
+        "prefix": "write/file",
+        "body": ["with open(${1:filename},\"w\") as f:", "\tf.write(${0})"]
+    },
+    "json": {
+        "prefix": "json",
+        "body": ["json"]
+    },
+    "json/dumps": {
+        "prefix": "json/dumps",
+        "body": ["json.dumps(${1:data},indent=${2:4},encoding=\"${3:utf-8}\")"]
+    },
+    "json/loads": {
+        "prefix": "json/loads",
+        "body": ["json.loads($0)"]
+    },
+    "os": {
+        "prefix": "os",
+        "body": ["os"]
+    },
+    "os.listdir": {
+        "prefix": "os.listdir",
+        "body": ["os.listdir(${1:dirname})"]
+    },
+    "os.walk": {
+        "prefix": "os.walk",
+        "body": ["os.walk(${1:dirname})"]
+    },
+    "os.getcwd": {
+        "prefix": "os.getcwd",
+        "body": ["os.getcwd()"]
+    },
+    "os.chdir": {
+        "prefix": "os.chdir",
+        "body": ["os.chdir(${1:dirname})"]
+    },
+    "os.mkdir": {
+        "prefix": "os.mkdir",
+        "body": ["os.mkdir(${1:dirname})"]
+    },
+    "os.makedirs": {
+        "prefix": "os.makedirs",
+        "body": ["os.makedirs(${1:dirname})"]
+    },
+    "os.removedirs": {
+        "prefix": "os.removedirs",
+        "body": ["os.removedirs(${1:dirname})"]
+    },
+    "os.rmdir": {
+        "prefix": "os.rmdir",
+        "body": ["os.rmdir(${1:dirname})"]
+    },
+    "os.remove": {
+        "prefix": "os.remove",
+        "body": ["os.remove(${1:filename})"]
+    },
+    "os.stat": {
+        "prefix": "os.stat",
+        "body": ["os.stat(${1:file})"],
+        "description": "获取文件/目录信息"
+    },
+    "os.path.getsize": {
+        "prefix": "os.path.getsize",
+        "body": ["os.path.getsize(${1:path})"],
+        "description": "获取文件大小"
+    },
+    "os.path.islink": {
+        "prefix": "os.path.islink",
+        "body": ["os.path.islink(${1:path})"],
+        "description": "判断路径是否为链接"
+    },
+    "os.path.ismount": {
+        "prefix": "os.path.ismount",
+        "body": ["os.path.ismount(${1:path})"],
+        "description": "判断路径是否为挂载点"
+    },
+    "os.path.splitext": {
+        "prefix": "os.path.splitext",
+        "body": ["os.path.splitext(${1:path})"],
+        "description": "分割路径，返回路径名和文件扩展名的元组"
+    },
+    "os.path.split": {
+        "prefix": "os.path.split",
+        "body": ["os.path.split(${1:path})"]
+    },
+    "os.path.abspath": {
+        "prefix": "os.path.abspath",
+        "body": ["os.path.abspath(${1:path})"]
+    },
+    "os.path.dirname": {
+        "prefix": "os.path.dirname",
+        "body": ["os.path.dirname(${1:path})"]
+    },
+    "os.path.basename": {
+        "prefix": "os.path.basename",
+        "body": ["os.path.basename(${1:path})"]
+    },
+    "os.path.exists": {
+        "prefix": "os.path.exists",
+        "body": ["os.path.exists(${1:path})"]
+    },
+    "os.path.isabs": {
+        "prefix": "os.path.isabs",
+        "body": ["os.path.isabs(${1:path})"]
+    },
+    "os.path.isfile": {
+        "prefix": "os.path.isfile",
+        "body": ["os.path.isfile(${1:path})"]
+    },
+    "os.path.isdir": {
+        "prefix": "os.path.isdir",
+        "body": ["os.path.isdir(${1:path})"]
+    },
+    "os.path.join": {
+        "prefix": "os.path.join",
+        "body": ["os.path.join(${1:path1},${2:path2})"]
+    },
+    "os.path.getctime": {
+        "prefix": "os.path.getctime",
+        "body": ["os.path.getctime(${1:path})"],
+        "description": "获取文件创建时间"
+    },
+    "os.path.getatime": {
+        "prefix": "os.path.getatime",
+        "body": ["os.path.getatime(${1:path})"],
+        "description": "文件或者目录的最后存取时间"
+    },
+    "os.path.getmtime": {
+        "prefix": "os.path.getmtime",
+        "body": ["os.path.getmtime(${1:path})"],
+        "description": "文件或者目录的最后修改时间"
+    },
+    "os.ctermid": {
+        "prefix": "os.ctermid",
+        "body": ["os.ctermid(${1:pid})"],
+        "description": "返回与进程控制终端对应的文件名"
+    },
+    "os.environ": {
+        "prefix": "os.environ",
+        "body": ["os.environ"]
+    },
+    "os.getenv": {
+        "prefix": "os.getenv",
+        "body": ["os.getenv(${1:key})"],
+        "description": "如果存在，返回环境变量 key 的值，否则返回 default"
+    },
+    "os.lstat": {
+        "prefix": "os.lstat",
+        "body": ["os.lstat(${1:path})"],
+        "description": ""
+    },
+    "os.system": {
+        "prefix": "os.system",
+        "body": ["os.system(${1:cmd})"]
+    },
+    "os.popen": {
+        "prefix": "os.popen",
+        "body": ["os.popen(${1:cmd})"],
+        "description": ""
+    },
+    "os.sep": {
+        "prefix": "os.sep",
+        "body": ["os.sep($1)"],
+        "description": "返回路径分隔符"
+    },
+    "os.getlogin": {
+        "prefix": "os.getlogin",
+        "body": ["os.getlogin()"],
+        "description": "返回当前系统的登录用户名,适用于unix"
+    },
+    "os.kill": {
+        "prefix": "os.kill",
+        "body": ["os.kill($1)"],
+        "description": "结束进程"
+    },
+    "sys": {
+        "prefix": "sys",
+        "body": ["sys"]
+    },
+    "sys.path": {
+        "prefix": "sys.path",
+        "body": ["sys.path"]
+    },
+    "sys.stderr": {
+        "prefix": "sys.stderr",
+        "body": ["sys.stderr"]
+    },
+    "sys.stdout": {
+        "prefix": "sys.stdout",
+        "body": ["sys.stdout"]
+    },
+    "sys.stdin": {
+        "prefix": "sys.stdin",
+        "body": ["sys.stdin"]
+    },
+    "sys.argv": {
+        "prefix": "sys.argv",
+        "body": ["sys.argv"],
+        "description": "获取运行 Python 程序的命令行参数"
+    },
+    "sys.exit()": {
+        "prefix": "sys.exit()",
+        "body": ["sys.exit()"],
+        "description": "通过引发 SystemExit 异常来退出程序，默认为0"
+    },
+    "sys.platform": {
+        "prefix": "sys.platform",
+        "body": ["sys.platform"],
+        "description": "当前正在运行的平台名称"
+    },
+    "sys.version": {
+        "prefix": "sys.version",
+        "body": ["sys.version"],
+        "description": "返回当前 Python 解释器的版本信息"
+    },
+    "re": {
+        "prefix": "re",
+        "body": ["re"]
+    },
+    "re.compile": {
+        "prefix": "re.compile",
+        "body": ["re.compile(${1:str})"],
+        "description": "该函数用于将正则表达式字符串编译成 _sre.SRE_Pattern 对象"
+    },
+    "re.search": {
+        "prefix": "re.search",
+        "body": ["re.search(${1:str1},${2:str2})"],
+        "description": "扫描整个字符串，并返回字符串中第一处匹配 pattern 的匹配对象"
+    },
+    "re.findall": {
+        "prefix": "re.findall",
+        "body": ["re.findall(${1:pattern},${2:string},flags=0)"],
+        "description": "扫描整个字符串，并返回字符串中所有匹配 pattern 的子串组成的列表。其中 pattern 参数代表正则表达式；string 代表被匹配的宇符串；flags 则代表正则表达式的匹配旗标。"
+    },
+    "re.finditer": {
+        "prefix": "re.finditer",
+        "body": ["re.finditer(${1:pattern},${2:string},flags=0)"],
+        "description": ""
+    },
+    "re.fullmatch": {
+        "prefix": "re.fullmatch",
+        "body": ["re.fullmatch(${1:pattern},${2:string},flags=0)"],
+        "description": ""
+    },
+    "re.sub": {
+        "prefix": "re.sub",
+        "body": ["re.sub($1)"],
+        "description": ""
+    },
+    "re.split": {
+        "prefix": "re.split",
+        "body": ["re.split($1)"],
+        "description": ""
+    },
+    "time": {
+        "prefix": "time",
+        "body": ["time"]
+    },
+    "datetime": {
+        "prefix": "datetime",
+        "body": ["datetime"]
+    },
+    "time Y-m-d": {
+        "prefix": "time Y-m-d",
+        "body": ["time.strftime(\"%Y-%m-%d\", time.localtime())"]
+    },
+    "time H:M:S": {
+        "prefix": "time H:M:S",
+        "body": ["time.strftime(\"%H:%M:%S\", time.localtime())"]
+    },
+    "time Y-m-d H:M:S": {
+        "prefix": "time Y-m-d H:M:S",
+        "body": ["time.strftime(\"%Y-%m-%d %H:%M:%S\", time.localtime())"]
+    },
+    "time.time": {
+        "prefix": "time.time()",
+        "body": ["time.time()"],
+        "description": ""
+    },
+    "time.localtime": {
+        "prefix": "time.localtime",
+        "body": ["time.localtime($1)"]
+    },
+    "time.clock": {
+        "prefix": "time.clock",
+        "body": ["time.clock($1)"]
+    },
+    "time.mktime": {
+        "prefix": "time.mktime",
+        "body": ["time.mktime($1)"]
+    },
+    "time.sleep": {
+        "prefix": "time.sleep",
+        "body": ["time.sleep($1)"],
+        "description": ""
+    },
+    "timedelta": {
+        "prefix": "timedelta",
+        "body": ["timedelta($1)"],
+        "description": ""
+    },
+    "strptime": {
+        "prefix": "strptime",
+        "body": ["datetime.strptime(${1:text}, '%Y-%m-%d %H:%M:%S')"],
+        "description": "字符串转换为日期"
+    },
+    "strptime Y-m-d": {
+        "prefix": "strptime Y-m-d",
+        "body": ["datetime.strptime(${1:text}, '%Y-%m-%d')"],
+        "description": "字符串转换为日期"
+    },
+    "strptime H-M-S": {
+        "prefix": "strptime H-M-S",
+        "body": ["datetime.strptime(${1:text}, '%H:%M:%S')"],
+        "description": "字符串转换为日期"
+    },
+    "calendar": {
+        "prefix": "calendar",
+        "body": ["calendar"]
+    },
+    "calendar.isleap": {
+        "prefix": "calendar.isleap",
+        "body": ["calendar.isleap(${1:year})"],
+        "description": "判断是否闰年，闰年返回true"
+    },
+    "calendar.month": {
+        "prefix": "calendar.month",
+        "body": ["calendar.month($1)"]
+    },
+    "requests": {
+        "prefix": "requests",
+        "body": ["requests"]
+    },
+    "requests.get": {
+        "prefix": "requests.get",
+        "body": ["requests.get(${1:url})"],
+        "description": "Request Get请求"
+    },
+    "requests.post": {
+        "prefix": "requests.post",
+        "body": ["requests.post(${1:url},data=${2:data})"],
+        "description": "Request post请求"
+    },
+    "glob": {
+        "prefix": "glob",
+        "body": ["glob"]
+    },
+    "glob.glob": {
+        "prefix": "glob.glob",
+        "body": ["glob.glob($1)"]
+    },
+    "except Exception": {
+        "prefix": "Exception",
+        "body": ["Exception"],
+        "description": ""
+    },
+    "except KeyboardInterrupt": {
+        "prefix": "KeyboardInterrupt",
+        "body": ["KeyboardInterrupt"],
+        "description": ""
+    },
+    "except SystemExit": {
+        "prefix": "SystemExit",
+        "body": ["SystemExit"],
+        "description": ""
+    },
+    "except BaseException": {
+        "prefix": "BaseException",
+        "body": ["BaseException"],
+        "description": ""
+    },
+    "except StopIteration": {
+        "prefix": "StopIteration",
+        "body": ["StopIteration"],
+        "description": ""
+    },
+    "except GeneratorExit": {
+        "prefix": "GeneratorExit",
+        "body": ["GeneratorExit"],
+        "description": ""
+    },
+    "except StandardError": {
+        "prefix": "StandardError",
+        "body": ["StandardError"],
+        "description": ""
+    },
+    "except ArithmeticError": {
+        "prefix": "ArithmeticError",
+        "body": ["ArithmeticError"],
+        "description": ""
+    },
+    "except FloatingPointError": {
+        "prefix": "FloatingPointError",
+        "body": ["FloatingPointError"],
+        "description": ""
+    },
+    "except OverflowError": {
+        "prefix": "OverflowError",
+        "body": ["OverflowError"],
+        "description": ""
+    },
+    "except ZeroDivisionError": {
+        "prefix": "ZeroDivisionError",
+        "body": ["ZeroDivisionError"],
+        "description": ""
+    },
+    "except AssertionError": {
+        "prefix": "AssertionError",
+        "body": ["AssertionError"],
+        "description": ""
+    },
+    "except AttributeError": {
+        "prefix": "AttributeError",
+        "body": ["AttributeError"],
+        "description": ""
+    },
+    "except EOFError": {
+        "prefix": "EOFError",
+        "body": ["EOFError"],
+        "description": "EOFError"
+    },
+    "except EnvironmentError": {
+        "prefix": "EnvironmentError",
+        "body": ["EnvironmentError"],
+        "description": ""
+    },
+    "except IOError": {
+        "prefix": "IOError",
+        "body": ["IOError"],
+        "description": ""
+    },
+    "except OSError": {
+        "prefix": "OSError",
+        "body": ["OSError"],
+        "description": ""
+    },
+    "except WindowsError": {
+        "prefix": "WindowsError",
+        "body": ["WindowsError"],
+        "description": ""
+    },
+    "except ImportError": {
+        "prefix": "ImportError",
+        "body": ["ImportError"],
+        "description": ""
+    },
+    "except LookupError": {
+        "prefix": "LookupError",
+        "body": ["LookupError"],
+        "description": ""
+    },
+    "except IndexError": {
+        "prefix": "IndexError",
+        "body": ["IndexError"],
+        "description": ""
+    },
+    "except KeyError": {
+        "prefix": "KeyError",
+        "body": ["KeyError"],
+        "description": ""
+    },
+    "except MemoryError": {
+        "prefix": "MemoryError",
+        "body": ["MemoryError"],
+        "description": ""
+    },
+    "except NameError": {
+        "prefix": "NameError",
+        "body": ["NameError"],
+        "description": ""
+    },
+    "except UnboundLocalError": {
+        "prefix": "UnboundLocalError",
+        "body": ["UnboundLocalError"],
+        "description": ""
+    },
+    "except ReferenceError": {
+        "prefix": "ReferenceError",
+        "body": ["ReferenceError"],
+        "description": ""
+    },
+    "except RuntimeError": {
+        "prefix": "RuntimeError",
+        "body": ["RuntimeError"],
+        "description": ""
+    },
+    "except NotImplementedError": {
+        "prefix": "NotImplementedError",
+        "body": ["NotImplementedError"],
+        "description": ""
+    },
+    "except SyntaxError": {
+        "prefix": "SyntaxError",
+        "body": ["SyntaxError"],
+        "description": ""
+    },
+    "except IndentationError": {
+        "prefix": "IndentationError",
+        "body": ["IndentationError"],
+        "description": ""
+    },
+    "except TabError": {
+        "prefix": "TabError",
+        "body": ["TabError"],
+        "description": ""
+    },
+    "except SystemError": {
+        "prefix": "SystemError",
+        "body": ["SystemError"],
+        "description": ""
+    },
+    "except TypeError": {
+        "prefix": "TypeError",
+        "body": ["TypeError"],
+        "description": ""
+    },
+    "except ValueError": {
+        "prefix": "ValueError",
+        "body": ["ValueError"],
+        "description": ""
+    },
+    "except UnicodeError": {
+        "prefix": "UnicodeError",
+        "body": ["UnicodeError"],
+        "description": ""
+    },
+    "except UnicodeDecodeError": {
+        "prefix": "UnicodeDecodeError",
+        "body": ["UnicodeDecodeError"],
+        "description": ""
+    },
+    "except UnicodeEncodeError": {
+        "prefix": "UnicodeEncodeError",
+        "body": ["UnicodeEncodeError"],
+        "description": ""
+    },
+    "except UnicodeTranslateError": {
+        "prefix": "UnicodeTranslateError",
+        "body": ["UnicodeTranslateError"],
+        "description": ""
+    },
+    "except Warning": {
+        "prefix": "Warning",
+        "body": ["Warning"],
+        "description": ""
+    },
+    "except DeprecationWarning": {
+        "prefix": "DeprecationWarning",
+        "body": ["DeprecationWarning"],
+        "description": ""
+    },
+    "except FutureWarning": {
+        "prefix": "FutureWarning",
+        "body": ["FutureWarning"],
+        "description": ""
+    },
+    "except OverflowWarning": {
+        "prefix": "OverflowWarning",
+        "body": ["OverflowWarning"],
+        "description": ""
+    },
+    "except PendingDeprecationWarning": {
+        "prefix": "PendingDeprecationWarning",
+        "body": ["PendingDeprecationWarning"],
+        "description": ""
+    },
+    "except RuntimeWarning": {
+        "prefix": "RuntimeWarning",
+        "body": ["RuntimeWarning"],
+        "description": ""
+    },
+    "except SyntaxWarning": {
+        "prefix": "SyntaxWarning",
+        "body": ["SyntaxWarning"],
+        "description": ""
+    },
+    "except UserWarning": {
+        "prefix": "UserWarning",
+        "body": ["UserWarning"],
+        "description": "UserWarning"
+    },
+    "__main__": {
+        "prefix": "__main__",
+        "body": ["if __name__ == \"__main__\":", "\t${1:pass}"]
+    }
+}
