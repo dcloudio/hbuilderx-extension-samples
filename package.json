@@ -34,6 +34,8 @@
     "onCommand:extension.api_workspace_get_configuration",
     "onCommand:extension.api_workspace_update_configuration",
     "onCommand:extension.api_workspace_add_configuration",
+    "onCommand:extension.api_on_did_chanage_configuration",
+    "onCommand:extension.api_on_did_change_forkspace_folders",
     "onCommand:extension.api_text_editor",
     "onCommand:extension.api_text_editor_linetext",
     "onCommand:extension.api_text_editor_line_to_upper_case",
@@ -150,6 +152,14 @@
       {
         "command": "extension.api_on_did_open_text_document",
         "title": "onDidOpenTextDocument 文档打开时的事件"
+      },
+      {
+        "command": "extension.api_on_did_change_forkspace_folders",
+        "title": "onDidChangeWorkspaceFolders 项目管理器内的项目新增或者移除时产生的事件"
+      },
+      {
+        "command": "extension.api_on_did_chanage_configuration",
+        "title": "onDidChangeConfiguration 全局配置改变事件"
       },
       {
         "command": "extension.api_workspace_apply_edit",
@@ -347,27 +357,43 @@
           "group": "workspace@5"
         },
         {
-          "command": "extension.api_workspace_apply_edit",
-          "title": "applyEdit",
-          "group": "workspace@5"
+          "group": "workspace@6"
         },
         {
+          "command": "extension.api_on_did_change_forkspace_folders",
+          "title": "onDidChangeWorkspaceFolders",
           "group": "workspace@6"
+        },
+        {
+          "group": "workspace@7"
+        },
+        {
+          "command": "extension.api_workspace_apply_edit",
+          "title": "applyEdit",
+          "group": "workspace@7"
+        },
+        {
+          "group": "workspace@8"
         },
         {
           "command": "extension.api_workspace_get_configuration",
           "title": "获取配置 getConfiguration",
-          "group": "workspace@7"
+          "group": "workspace@9"
         },
         {
           "command": "extension.api_workspace_update_configuration",
           "title": "更新配置 getConfiguration",
-          "group": "workspace@8"
+          "group": "workspace@10"
         },
         {
           "command": "extension.api_workspace_add_configuration",
           "title": "新增配置 getConfiguration",
-          "group": "workspace@9"
+          "group": "workspace@11"
+        },
+        {
+          "command": "extension.api_on_did_chanage_configuration",
+          "title": "onDidChangeConfiguration",
+          "group": "workspace@12"
         },
         {
           "title": "插件api: getActiveTextEditor",

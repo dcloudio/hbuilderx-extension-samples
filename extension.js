@@ -16,6 +16,8 @@ var onWillSaveTextDocument = require('./api/workspace/onWillSaveTextDocument.js'
 var onDidChangeTextDocument = require('./api/workspace/onDidChangeTextDocument.js');
 var onDidSaveTextDocument = require('./api/workspace/onDidSaveTextDocument.js');
 var onDidOpenTextDocument = require('./api/workspace/onDidOpenTextDocument.js');
+var onDidChangeWorkspaceFolders = require('./api/workspace/onDidChangeWorkspaceFolders.js');
+var onDidChangeConfiguration = require('./api/workspace/onDidChangeConfiguration.js')
 var applyEdit = require('./api/workspace/applyEdit.js');
 var getConfiguration = require('./api/workspace/getConfiguration.js');
 var textEditor = require('./api/textEditor/textEditor.js');
@@ -91,8 +93,6 @@ function activate(context) {
     'extension.api_get_active_text_editor_for_project_name', () => {
       getActiveTextEditor.getActiveTextEditor("project_name");
     });
-
-
   // windows Api: 创建输出控制台
   let api_window_create_output_channel = hx.commands.registerCommand('extension.api_window_create_output_channel', () => {
     createOutputChannel.createOutputChannel();
@@ -117,9 +117,17 @@ function activate(context) {
   let api_on_did_save_text_document = hx.commands.registerCommand('extension.api_on_did_save_text_document', () => {
     onDidSaveTextDocument.onDidSaveTextDocument();
   });
+  // workspace Api:
+  let api_on_did_change_forkspace_folders = hx.commands.registerCommand('extension.api_on_did_change_forkspace_folders', () => {
+    onDidChangeWorkspaceFolders.onDidChangeWorkspaceFolders()
+  });
   // workspace Api: applyEdit
   let api_workspace_apply_edit = hx.commands.registerCommand('extension.api_workspace_apply_edit', () => {
     applyEdit.applyEdit();
+  });
+  // workspace Api: onDidChangeConfiguration
+  let api_on_did_chanage_configuration = hx.commands.registerCommand('extension.api_on_did_chanage_configuration', ()=> {
+    onDidChangeConfiguration.onDidChangeConfiguration()
   });
   // workspace Api: getConfiguration 根据指定的section获取对应配置
   let api_workspace_get_configuration = hx.commands.registerCommand('extension.api_workspace_get_configuration', () => {
