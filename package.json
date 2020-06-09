@@ -34,6 +34,8 @@
     "onCommand:extension.api_workspace_get_configuration",
     "onCommand:extension.api_workspace_update_configuration",
     "onCommand:extension.api_workspace_add_configuration",
+    "onCommand:extension.api_get_workspace_folders",
+     "onCommand:extension.api_get_workspace_folder",
     "onCommand:extension.api_on_did_chanage_configuration",
     "onCommand:extension.api_on_did_change_forkspace_folders",
     "onCommand:extension.api_text_editor",
@@ -156,6 +158,14 @@
       {
         "command": "extension.api_on_did_change_forkspace_folders",
         "title": "onDidChangeWorkspaceFolders 项目管理器内的项目新增或者移除时产生的事件"
+      },
+      {
+        "command": "extension.api_get_workspace_folders",
+        "title": "getWorkspaceFolders 获取项目管理器下所有的项目对象"
+      },
+      {
+        "command": "extension.api_get_workspace_folder",
+        "title": "getWorkspaceFolder 获取某个文件所在的项目"
       },
       {
         "command": "extension.api_on_did_chanage_configuration",
@@ -362,6 +372,16 @@
         {
           "command": "extension.api_on_did_change_forkspace_folders",
           "title": "onDidChangeWorkspaceFolders",
+          "group": "workspace@6"
+        },
+        {
+          "command": "extension.api_get_workspace_folders",
+          "title": "获取项目管理器下所有的项目对象",
+          "group": "workspace@6"
+        },
+        {
+          "command": "extension.api_get_workspace_folder",
+          "title": "获取某个文件所在的项目",
           "group": "workspace@6"
         },
         {

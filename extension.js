@@ -20,6 +20,8 @@ var onDidChangeWorkspaceFolders = require('./api/workspace/onDidChangeWorkspaceF
 var onDidChangeConfiguration = require('./api/workspace/onDidChangeConfiguration.js')
 var applyEdit = require('./api/workspace/applyEdit.js');
 var getConfiguration = require('./api/workspace/getConfiguration.js');
+var getWorkspaceFolders = require('./api/workspace/getWorkspaceFolders.js');
+var getWorkspaceFolder = require('./api/workspace/getWorkspaceFolder.js');
 var textEditor = require('./api/textEditor/textEditor.js');
 var lineFromPosition = require('./api/textEditor/lineFromPosition.js');
 var lineAt = require('./api/textEditor/lineAt.js');
@@ -125,6 +127,14 @@ function activate(context) {
   let api_workspace_apply_edit = hx.commands.registerCommand('extension.api_workspace_apply_edit', () => {
     applyEdit.applyEdit();
   });
+  // workspace Api: getWorkspaceFolders
+  let api_get_workspace_folders = hx.commands.registerCommand('extension.api_get_workspace_folders', () => {
+    getWorkspaceFolders.getWorkspaceFolders()
+  })
+  // workspace Api: getWorkspaceFolder
+  let api_get_workspace_folder = hx.commands.registerCommand('extension.api_get_workspace_folder', () => {
+    getWorkspaceFolder.getWorkspaceFolder()
+  })
   // workspace Api: onDidChangeConfiguration
   let api_on_did_chanage_configuration = hx.commands.registerCommand('extension.api_on_did_chanage_configuration', ()=> {
     onDidChangeConfiguration.onDidChangeConfiguration()
