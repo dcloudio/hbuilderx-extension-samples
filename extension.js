@@ -33,6 +33,7 @@ var help = require('./api/help/help.js');
 var openExternal = require('./api/env/openExternal.js');
 var clipboard = require('./api/env/clipboard.js');
 
+var DemoTreeDataProvider = require('./api/treeview/treeview.js').DemoTreeDataProvider;
 
 //该方法将在插件激活的时候调用
 function activate(context) {
@@ -120,9 +121,10 @@ function activate(context) {
     onDidSaveTextDocument.onDidSaveTextDocument();
   });
   // workspace Api:
-  let api_on_did_change_forkspace_folders = hx.commands.registerCommand('extension.api_on_did_change_forkspace_folders', () => {
-    onDidChangeWorkspaceFolders.onDidChangeWorkspaceFolders()
-  });
+  let api_on_did_change_forkspace_folders = hx.commands.registerCommand('extension.api_on_did_change_forkspace_folders',
+    () => {
+      onDidChangeWorkspaceFolders.onDidChangeWorkspaceFolders()
+    });
   // workspace Api: applyEdit
   let api_workspace_apply_edit = hx.commands.registerCommand('extension.api_workspace_apply_edit', () => {
     applyEdit.applyEdit();
@@ -136,7 +138,7 @@ function activate(context) {
     getWorkspaceFolder.getWorkspaceFolder()
   })
   // workspace Api: onDidChangeConfiguration
-  let api_on_did_chanage_configuration = hx.commands.registerCommand('extension.api_on_did_chanage_configuration', ()=> {
+  let api_on_did_chanage_configuration = hx.commands.registerCommand('extension.api_on_did_chanage_configuration', () => {
     onDidChangeConfiguration.onDidChangeConfiguration()
   });
   // workspace Api: getConfiguration 根据指定的section获取对应配置
@@ -190,7 +192,7 @@ function activate(context) {
   let api_set_selection = hx.commands.registerCommand('extension.api_set_selection', () => {
     setSelection.setSelection()
   })
-  
+
   // Languages Api: DiagnosticCollection 创建问题集合
   let api_languages_create_diagnostics_collection = hx.commands.registerCommand(
     'extension.api_languages_create_diagnostics_collection', () => {
@@ -217,7 +219,13 @@ function activate(context) {
   // clipboard
   let api_clipboard_read = hx.commands.registerCommand('extension.api_clipboard_read', () => {
     clipboard.clipboardRead()
-  })
+  });
+
+  //Api: treeview
+  hx.window.createTreeView("extension.treedemo", {
+    showCollapseAll: true,
+    treeDataProvider: new DemoTreeDataProvider()
+  });
 }
 
 //该方法将在插件禁用的时候调用（目前是在插件卸载的时候触发）

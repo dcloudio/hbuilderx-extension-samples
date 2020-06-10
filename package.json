@@ -35,7 +35,7 @@
     "onCommand:extension.api_workspace_update_configuration",
     "onCommand:extension.api_workspace_add_configuration",
     "onCommand:extension.api_get_workspace_folders",
-     "onCommand:extension.api_get_workspace_folder",
+    "onCommand:extension.api_get_workspace_folder",
     "onCommand:extension.api_on_did_chanage_configuration",
     "onCommand:extension.api_on_did_change_forkspace_folders",
     "onCommand:extension.api_text_editor",
@@ -52,14 +52,26 @@
     "onCommand:extension.api_openExternal_url",
     "onCommand:extension.api_openExternal_mail",
     "onCommand:extension.api_clipboard_write",
-    "onCommand:extension.api_clipboard_read"
+    "onCommand:extension.api_clipboard_read",
+    "onView:extension.treedemo"
   ],
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [{
+        "id": "demoview",
+        "title": "DemoView"
+      }]
+    },
+    "views": {
+      "demoview": [{
+        "id": "extension.treedemo",
+        "name": "DemoView"
+      }]
+    },
     "snippets": [{
-        "language": "python",
-        "path": "./snippets/python.json"
-      }
-    ],
+      "language": "python",
+      "path": "./snippets/python.json"
+    }],
     "configuration": {
       "title": "hbuilderx-extension-samples",
       "properties": {
