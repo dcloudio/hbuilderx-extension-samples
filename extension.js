@@ -34,9 +34,14 @@ var openExternal = require('./api/env/openExternal.js');
 var clipboard = require('./api/env/clipboard.js');
 
 var DemoTreeDataProvider = require('./api/treeview/treeview.js').DemoTreeDataProvider;
+var test = require('./test/test.js');
 
 //该方法将在插件激活的时候调用
 function activate(context) {
+  // run test
+  let runtest = hx.commands.registerCommand('extension.runtest', () => {
+    test.runtest()
+  });
   // commands
   let api_commands = hx.commands.registerCommand('extension.api_commands', () => {
     commands.executeCommand();
