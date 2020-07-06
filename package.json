@@ -53,7 +53,8 @@
     "onCommand:extension.api_openExternal_mail",
     "onCommand:extension.api_clipboard_write",
     "onCommand:extension.api_clipboard_read",
-    "onView:extension.treedemo"
+    "onView:extension.treedemo",
+    "onCommand:extension.runtest"
   ],
   "contributes": {
     "viewsContainers": {
@@ -88,6 +89,9 @@
       }
     },
     "commands": [{
+        "command": "extension.runtest",
+        "title": "api 测试"
+      },{
         "command": "extension.api_commands",
         "title": "执行内置命令"
       },
@@ -262,7 +266,10 @@
     ],
     "menus": {
       "explorer/context": [],
-      "menubar/tool": [],
+      "menubar/tool": [{
+        "command": "extension.runtest",
+        "title": "HBuilderX API测试"
+      }],
       "menubar/help": [{
         "command": "extension.open_help",
         "title": "HBuilderX插件开发文档",

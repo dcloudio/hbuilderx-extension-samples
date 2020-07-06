@@ -42,14 +42,13 @@ const allCommands = [
   "api_openExternal_url",
   "api_openExternal_mail",
   "api_clipboard_write",
-  "api_clipboard_read",
-  "onView:extension.treedemo"
+  "api_clipboard_read"
 ]
 
 async function runtest() {
   for (let s of allCommands) {
     let result = await hx.commands.executeCommand("extension." + s);
-    console.log("...",result);
+    console.log("...",s,result);
   }
 };
 
