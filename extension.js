@@ -232,10 +232,12 @@ function activate(context) {
     showCollapseAll: true,
     treeDataProvider: new DemoTreeDataProvider()
   });
-  let webviewPanel = hx.window.createWebview("extension.WebView", {
+  
+  // Api: webview
+  let webviewPanel = hx.window.createWebView("extension.WebView", {
     enableScritps:true
   });
-  showWebView(webviewPanel)
+  showWebView.showWebView(webviewPanel);
 };
 
 //该方法将在插件禁用的时候调用（目前是在插件卸载的时候触发）
