@@ -238,6 +238,11 @@ function activate(context) {
     enableScritps:true
   });
   showWebView.showWebView(webviewPanel);
+  
+  let webviewPanel2 = hx.window.createWebView("extension.WebView2", {
+    enableScritps:true
+  });
+  showWebView.showWebView(webviewPanel2);
 };
 
 //该方法将在插件禁用的时候调用（目前是在插件卸载的时候触发）

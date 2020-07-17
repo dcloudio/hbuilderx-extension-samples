@@ -55,6 +55,7 @@
         "onCommand:extension.api_clipboard_read",
         "onView:extension.treedemo",
         "onView:extension.WebView",
+        "onView:extension.WebView2",
         "onCommand:extension.runtest"
     ],
     "contributes": {
@@ -65,7 +66,10 @@
             }],
             "rightside": [{
                 "id": "WebViewcontainerId",
-                "title": "WebView"
+                "title": "webview好好学习"
+            },{
+                "id": "WebViewcontainerId2",
+                "title": "webview好好工作"
             }]
         },
         "views": {
@@ -75,7 +79,11 @@
             }],
             "WebViewcontainerId": [{
                 "id": "extension.WebView",
-                "title": "WebView"
+                "title": "webview - 好好工作"
+            }],
+            "WebViewcontainerId2": [{
+                "id": "extension.WebView2",
+                "title": "webview - 好好学习"
             }]
         },
         "snippets": [{
