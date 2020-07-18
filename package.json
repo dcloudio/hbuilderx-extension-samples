@@ -63,13 +63,13 @@
             "activitybar": [{
                 "id": "demoview",
                 "title": "DemoView"
+            },{
+                "id": "WebViewcontainerId2",
+                "title": "webview好好工作"
             }],
             "rightside": [{
                 "id": "WebViewcontainerId",
                 "title": "webview好好学习"
-            },{
-                "id": "WebViewcontainerId2",
-                "title": "webview好好工作"
             }]
         },
         "views": {
