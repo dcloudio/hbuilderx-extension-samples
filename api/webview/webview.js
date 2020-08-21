@@ -35,7 +35,6 @@ function showWebView(webviewPanel) {
                 }
                 
                 window.onload=function() {
-                    //    以下两种写法等同
                     hbuilderx.onDidReceiveMessage((msg) => {
                         console.log(msg)
                     });
