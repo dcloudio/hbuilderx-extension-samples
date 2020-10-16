@@ -56,7 +56,9 @@
         "onView:extension.treedemo",
         "onView:extension.WebView",
         "onView:extension.WebView2",
-        "onCommand:extension.runtest"
+        "onCommand:extension.runtest",
+        "onCommand:extension.CustomEditor",
+        "onCustomEditor:catEdit.catScratch"
     ],
     "contributes": {
         "viewsContainers": {
@@ -86,6 +88,14 @@
                 "title": "webview - 好好学习"
             }]
         },
+        "customEditors": [{
+            "viewType": "catEdit.catScratch",
+            "displayName": "Cat Scratch",
+            "selector": [{
+                "fileNamePattern": "*.cscratch"
+            }],
+            "priority": "default"
+        }],
         "snippets": [{
             "language": "python",
             "path": "./snippets/python.json"
@@ -279,6 +289,10 @@
             {
                 "command": "extension.api_clipboard_read",
                 "title": "读取剪切板"
+            },
+            {
+                "command": "extension.CustomEditor",
+                "title": "打开自定义编辑器"
             }
         ],
         "menus": {
@@ -561,6 +575,12 @@
                     "command": "extension.api_clipboard_read",
                     "title": "读取剪切板",
                     "group": "env@4"
+                },
+                
+                {
+                    "command": "extension.CustomEditor",
+                    "title": "插件api: 自定义编辑器",
+                    "group": "z_commands"
                 },
                 {
                     "group": "z_commands"
