@@ -2,37 +2,38 @@ const hx = require("hbuilderx");
 const path = require("path");
 
 // api
-var commands = require("./api/commands/executeCommand.js");
-var setStatusBarMessage = require('./api/window/setStatusBarMessage.js');
-var clearStatusBarMessage = require('./api/window/clearStatusBarMessage.js');
-var showErrorMessage = require('./api/window/showErrorMessage.js');
-var showInformationMessage = require('./api/window/showInformationMessage.js');
-var showWarningMessage = require('./api/window/showWarningMessage.js');
-var showQuickPick = require('./api/window/showQuickPick.js');
-var getActiveTextEditor = require('./api/window/getActiveTextEditor.js');
-var createOutputChannel = require('./api/window/createOutputChannel.js');
-var showInputBox = require('./api/window/showInputBox.js');
-var openTextDocument = require('./api/workspace/openTextDocument.js');
-var onWillSaveTextDocument = require('./api/workspace/onWillSaveTextDocument.js');
-var onDidChangeTextDocument = require('./api/workspace/onDidChangeTextDocument.js');
-var onDidSaveTextDocument = require('./api/workspace/onDidSaveTextDocument.js');
-var onDidOpenTextDocument = require('./api/workspace/onDidOpenTextDocument.js');
-var onDidChangeWorkspaceFolders = require('./api/workspace/onDidChangeWorkspaceFolders.js');
-var onDidChangeConfiguration = require('./api/workspace/onDidChangeConfiguration.js')
-var applyEdit = require('./api/workspace/applyEdit.js');
-var getConfiguration = require('./api/workspace/getConfiguration.js');
-var getWorkspaceFolders = require('./api/workspace/getWorkspaceFolders.js');
-var getWorkspaceFolder = require('./api/workspace/getWorkspaceFolder.js');
-var textEditor = require('./api/textEditor/textEditor.js');
-var lineFromPosition = require('./api/textEditor/lineFromPosition.js');
-var lineAt = require('./api/textEditor/lineAt.js');
-var getText = require('./api/textEditor/getText.js');
-var uri = require('./api/textEditor/uri.js');
-var setSelection = require('./api/textEditor/setSelection.js');
-var DiagnosticCollection = require('./api/languages/DiagnosticCollection.js');
-var help = require('./api/help/help.js');
-var openExternal = require('./api/env/openExternal.js');
-var clipboard = require('./api/env/clipboard.js');
+const commands = require("./api/commands/executeCommand.js");
+const setStatusBarMessage = require('./api/window/setStatusBarMessage.js');
+const clearStatusBarMessage = require('./api/window/clearStatusBarMessage.js');
+const showErrorMessage = require('./api/window/showErrorMessage.js');
+const showInformationMessage = require('./api/window/showInformationMessage.js');
+const showWarningMessage = require('./api/window/showWarningMessage.js');
+const showQuickPick = require('./api/window/showQuickPick.js');
+const getActiveTextEditor = require('./api/window/getActiveTextEditor.js');
+const createOutputChannel = require('./api/window/createOutputChannel.js');
+const showInputBox = require('./api/window/showInputBox.js');
+const openTextDocument = require('./api/workspace/openTextDocument.js');
+const onWillSaveTextDocument = require('./api/workspace/onWillSaveTextDocument.js');
+const onDidChangeTextDocument = require('./api/workspace/onDidChangeTextDocument.js');
+const onDidSaveTextDocument = require('./api/workspace/onDidSaveTextDocument.js');
+const onDidOpenTextDocument = require('./api/workspace/onDidOpenTextDocument.js');
+const onDidChangeWorkspaceFolders = require('./api/workspace/onDidChangeWorkspaceFolders.js');
+const onDidChangeConfiguration = require('./api/workspace/onDidChangeConfiguration.js')
+const applyEdit = require('./api/workspace/applyEdit.js');
+const getConfiguration = require('./api/workspace/getConfiguration.js');
+const getWorkspaceFolders = require('./api/workspace/getWorkspaceFolders.js');
+const getWorkspaceFolder = require('./api/workspace/getWorkspaceFolder.js');
+const textEditor = require('./api/textEditor/textEditor.js');
+const lineFromPosition = require('./api/textEditor/lineFromPosition.js');
+const lineAt = require('./api/textEditor/lineAt.js');
+const getText = require('./api/textEditor/getText.js');
+const uri = require('./api/textEditor/uri.js');
+const setSelection = require('./api/textEditor/setSelection.js');
+const DiagnosticCollection = require('./api/languages/DiagnosticCollection.js');
+const help = require('./api/help/help.js');
+const openExternal = require('./api/env/openExternal.js');
+const clipboard = require('./api/env/clipboard.js');
+const authorize = require('./api/authorize/index.js');
 
 var DemoTreeDataProvider = require('./api/treeview/treeview.js').DemoTreeDataProvider;
 var showWebView = require('./api/webview/webview.js');
@@ -96,15 +97,13 @@ function activate(context) {
         getActiveTextEditor.getActiveTextEditor("filename");
     });
     // windows Api: 获取项目类型
-    let api_get_active_text_editor_for_nature = hx.commands.registerCommand(
-        'extension.api_get_active_text_editor_for_nature', () => {
-            getActiveTextEditor.getActiveTextEditor("nature");
-        });
+    let api_get_active_text_editor_for_nature = hx.commands.registerCommand('extension.api_get_active_text_editor_for_nature', () => {
+        getActiveTextEditor.getActiveTextEditor("nature");
+    });
     // windows Api: 获取项目名称
-    let api_get_active_text_editor_for_project_name = hx.commands.registerCommand(
-        'extension.api_get_active_text_editor_for_project_name', () => {
-            getActiveTextEditor.getActiveTextEditor("project_name");
-        });
+    let api_get_active_text_editor_for_project_name = hx.commands.registerCommand('extension.api_get_active_text_editor_for_project_name', () => {
+        getActiveTextEditor.getActiveTextEditor("project_name");
+    });
     // windows Api: 创建输出控制台
     let api_window_create_output_channel = hx.commands.registerCommand('extension.api_window_create_output_channel', () => {
         createOutputChannel.createOutputChannel();
@@ -130,11 +129,9 @@ function activate(context) {
         onDidSaveTextDocument.onDidSaveTextDocument();
     });
     // workspace Api:
-    let api_on_did_change_forkspace_folders = hx.commands.registerCommand(
-        'extension.api_on_did_change_forkspace_folders',
-        () => {
-            onDidChangeWorkspaceFolders.onDidChangeWorkspaceFolders()
-        });
+    let api_on_did_change_forkspace_folders = hx.commands.registerCommand('extension.api_on_did_change_forkspace_folders', () => {
+        onDidChangeWorkspaceFolders.onDidChangeWorkspaceFolders()
+    });
     // workspace Api: applyEdit
     let api_workspace_apply_edit = hx.commands.registerCommand('extension.api_workspace_apply_edit', () => {
         applyEdit.applyEdit();
@@ -178,10 +175,9 @@ function activate(context) {
         textEditor.textEditor("linetext");
     });
     // TextEditor Api: 把当前选中的内容由小写转换大写
-    let api_text_editor_line_to_upper_case = hx.commands.registerCommand('extension.api_text_editor_line_to_upper_case',
-        () => {
-            textEditor.textEditor("UpperCase");
-        });
+    let api_text_editor_line_to_upper_case = hx.commands.registerCommand('extension.api_text_editor_line_to_upper_case',() => {
+        textEditor.textEditor("UpperCase");
+    });
     // TextEditor Api:获取当前文件tabSize
     let api_text_editor_indent = hx.commands.registerCommand('extension.api_text_editor_indent', () => {
         textEditor.textEditor("tabSize");
@@ -204,10 +200,9 @@ function activate(context) {
     })
 
     // Languages Api: DiagnosticCollection 创建问题集合
-    let api_languages_create_diagnostics_collection = hx.commands.registerCommand(
-        'extension.api_languages_create_diagnostics_collection', () => {
-            DiagnosticCollection.createDiagnosticCollection();
-        });
+    let api_languages_create_diagnostics_collection = hx.commands.registerCommand('extension.api_languages_create_diagnostics_collection', () => {
+        DiagnosticCollection.createDiagnosticCollection();
+    });
 
     // help
     let open_help = hx.commands.registerCommand("extension.open_help", () => {
@@ -230,6 +225,19 @@ function activate(context) {
     let api_clipboard_read = hx.commands.registerCommand('extension.api_clipboard_read', () => {
         clipboard.clipboardRead()
     });
+    // openExternals
+    let api_openExternal_mail = hx.commands.registerCommand('extension.api_openExternal_mail', () => {
+        openExternal.openExternal("mailto:ide@dcloud.io")
+    })
+
+    // authorize login
+    let api_authorize_login = hx.commands.registerCommand('extension.api_authorize_login', () => {
+        authorize.login()
+    });
+
+    // authorize logout
+    let api_authorize_logout = hx.commands.registerCommand('extension.api_authorize_logout', () => {
+        authorize.logout()
 
     //Api: treeview
     hx.window.createTreeView("extension.treedemo", {

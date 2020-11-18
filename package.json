@@ -53,6 +53,8 @@
         "onCommand:extension.api_openExternal_mail",
         "onCommand:extension.api_clipboard_write",
         "onCommand:extension.api_clipboard_read",
+        "onCommand:extension.api_authorize_login",
+        "onCommand:extension.api_authorize_logout",
         "onView:extension.treedemo",
         "onView:extension.WebView",
         "onView:extension.WebView2",
@@ -293,6 +295,12 @@
             {
                 "command": "extension.CustomEditor",
                 "title": "打开自定义编辑器"
+            },{
+                "command": "extension.api_authorize_login",
+                "title": "用户认证"
+            },{
+                "command": "extension.api_authorize_logout",
+                "title": "用户退出登录"
             }
         ],
         "menus": {
@@ -576,7 +584,21 @@
                     "title": "读取剪切板",
                     "group": "env@4"
                 },
-                
+                {
+                    "title": "插件api: authorize",
+                    "id": "authorize",
+                    "group": "z_commands"
+                },
+                {
+                    "command": "extension.api_authorize_login",
+                    "title": "用户登录",
+                    "group": "authorize@1"
+                },
+                {
+                    "command": "extension.api_authorize_logout",
+                    "title": "用户退出登录",
+                    "group": "authorize@2"
+                },
                 {
                     "command": "extension.CustomEditor",
                     "title": "插件api: 自定义编辑器",
