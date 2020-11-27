@@ -40,6 +40,7 @@
         "onCommand:api.get_workspace_folder",
         "onCommand:api.on_did_chanage_configuration",
         "onCommand:api.on_did_change_forkspace_folders",
+        "onCommand:api.workspace_copy_file_with_prompt",
         "onCommand:api.text_editor",
         "onCommand:api.text_editor_linetext",
         "onCommand:api.text_editor_line_to_upper_case",
@@ -225,6 +226,10 @@
             {
                 "command": "api.on_did_chanage_configuration",
                 "title": "onDidChangeConfiguration 全局配置改变事件"
+            },
+            {
+                "command": "api.workspace_copy_file_with_prompt",
+                "title": "copyFileWithPrompt 复制文件"
             },
             {
                 "command": "api.workspace_apply_edit",
@@ -492,6 +497,11 @@
                     "command": "api.on_did_chanage_configuration",
                     "title": "onDidChangeConfiguration",
                     "group": "workspace@12"
+                },
+                {
+                    "command": "api.workspace_copy_file_with_prompt",
+                    "title": "copyFileWithPrompt",
+                    "group": "workspace@13"
                 },
                 {
                     "title": "插件api: getActiveTextEditor",

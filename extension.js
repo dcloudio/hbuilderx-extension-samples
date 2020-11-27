@@ -27,6 +27,7 @@ const applyEdit = require('./api/workspace/applyEdit.js');
 const getConfiguration = require('./api/workspace/getConfiguration.js');
 const getWorkspaceFolders = require('./api/workspace/getWorkspaceFolders.js');
 const getWorkspaceFolder = require('./api/workspace/getWorkspaceFolder.js');
+const copyFileWithPrompt = require('./api/workspace/copyFileWithPrompt.js');
 
 const textEditor = require('./api/textEditor/textEditor.js');
 const lineFromPosition = require('./api/textEditor/lineFromPosition.js');
@@ -174,6 +175,10 @@ function activate(context) {
     // workspace Api: getConfiguration add
     let api_workspace_add_configuration = hx.commands.registerCommand('api.workspace_add_configuration', () => {
         getConfiguration.addConfiguration();
+    });
+    // workspace Api: copyFileWithPrompt
+    let api_workspace_copy_file_with_prompt = hx.commands.registerCommand('api.workspace_copy_file_with_prompt', () => {
+        copyFileWithPrompt();
     });
 
     // windows Api: 打印uri所有信息
