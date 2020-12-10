@@ -2,11 +2,11 @@ const hx = require('hbuilderx');
 
 function login() {
     let prom = hx.authorize.login({
-        appId: "xxxxxxxx",
+        appId: "xxxx",
         scopes: ['basic', 'email', 'phone']
     });
     prom.then(function(param) {
-        console.log(prom)
+        console.log(param)
     });
 }
 
