@@ -47,7 +47,7 @@ const allCommands = [
 
 async function runtest() {
   for (let s of allCommands) {
-    let result = await hx.commands.executeCommand("extension." + s);
+    let result = await hx.commands.executeCommand(s);
     console.log("...",s,result);
   }
 };
