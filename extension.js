@@ -42,6 +42,7 @@ const help = require('./api/help/help.js');
 const openExternal = require('./api/env/openExternal.js');
 const clipboard = require('./api/env/clipboard.js');
 const authorize = require('./api/authorize/index.js');
+const handleJson = require('./api/util/json.js');
 
 var DemoTreeDataProvider = require('./api/treeview/treeview.js').DemoTreeDataProvider;
 var showWebView = require('./api/webview/webview.js');
@@ -280,6 +281,12 @@ function activate(context) {
     let CustomEditorTest = hx.commands.registerCommand('api.CustomEditor', (param) => {
         let f = path.join(__dirname, "api", "customEditor", "test.cscratch");
         hx.workspace.openTextDocument(f);
+    });
+
+    // 操作json
+    let hjson = hx.commands.registerCommand('api.util_handleJson', () => {
+        let rwJson = new handleJson();
+        rwJson.main();
     });
 };
 
