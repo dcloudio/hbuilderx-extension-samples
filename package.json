@@ -64,7 +64,8 @@
         "onView:api.WebView2",
         "onCommand:api.runtest",
         "onCommand:api.CustomEditor",
-        "onCustomEditor:catEdit.catScratch"
+        "onCustomEditor:catEdit.catScratch",
+        "onAppService:api.pack_example"
     ],
     "contributes":{
         "viewsContainers":{
@@ -105,6 +106,11 @@
                 }
             ]
         },
+        "app-services": [{
+            "title": "打包扩展",
+            "handler": "api.pack_example"
+          }
+        ],
         "customEditors":[
             {
                 "viewType":"catEdit.catScratch",
