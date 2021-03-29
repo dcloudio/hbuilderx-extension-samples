@@ -2,8 +2,9 @@ const hx = require('hbuilderx');
 
 function login() {
     let prom = hx.authorize.login({
-        appId: "xxxx",
-        scopes: ['basic', 'email', 'phone']
+        appId: "Hl9DHrNwyc",
+        scopes: ['basic', 'email', 'phone'],
+        description: "这个是申请权限描述......."
     });
     prom.then(function(param) {
         console.log(param)
