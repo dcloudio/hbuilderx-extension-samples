@@ -53,7 +53,6 @@ var CatCustomEditorProvider = require('./api/customEditor/custom.js');
 //该方法将在插件激活的时候调用
 function activate(context) {
     hx.app.registService("api.pack_example", (context) => {
-        console.log('---', context);
         console.log("path:" + context.pkgLocation);
     });
     // run test

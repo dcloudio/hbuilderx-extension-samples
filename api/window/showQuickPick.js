@@ -23,7 +23,7 @@ function openBrowser(url) {
  */
 function showQuickPick() {
 	let items = [{
-			label: "HBuilderX入门教程",
+			label: "<span style='color:red;'>入门必看: HBuilderX入门教程</span>",
 			url: "https://ask.dcloud.net.cn/article/35357"
 		}, {
 			label: "HBuilderX技巧：利用外部命令，可以做哪些事？",
@@ -38,7 +38,7 @@ function showQuickPick() {
 			url: "https://ask.dcloud.net.cn/article/97"
 		}
 	];
-	
+
 	const PickResult = hx.window.showQuickPick(items, {
 		placeHolder: "请选择您要查看的帮助文档"
 	});
@@ -49,7 +49,7 @@ function showQuickPick() {
 		}
 		let text = result.label;
 		console.log("您选择的内容是：", text);
-		
+
 		// 使用浏览器打开URL
 		openBrowser(result.url);
 	});
