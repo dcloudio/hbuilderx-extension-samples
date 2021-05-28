@@ -9,7 +9,7 @@ function getConfiguration() {
 	let node_memory = config.get('node.run.memoryParam');
 	let msg = "当前uniapp node运行内存最大值为: " + String(node_memory);
 	hx.window.showInformationMessage(msg);
-	
+
 	// 以eslint-js为例
 	let esconfig = hx.workspace.getConfiguration("eslint-js");
 	let is_autoFixOnSave = esconfig.get('autoFixOnSave');
@@ -23,7 +23,7 @@ function updateConfiguration() {
 	let config = hx.workspace.getConfiguration();
 	var before_memory = config.get('node.run.memoryParam');
 	console.log("==============update before:",before_memory);
-	
+
 	config.update("node.run.memoryParam", "1024").then(() => {
 		// 获取更新之后的值
 		let after_memory = config.get('node.run.memoryParam');
@@ -33,6 +33,16 @@ function updateConfiguration() {
 		hx.window.showInformationMessage(msg);
 		console.log(msg);
 	})
+
+    config.update("testobject", {"name":"beijign"}).then(() => {
+        console.log('更新object')
+    })
+
+    config.update("workbench.colorCustomizations", {"[Default]":{
+        "sideBar.background": "#FFFFFF"
+    }}).then(() => {
+        console.log('更新object')
+    })
 }
 
 /**

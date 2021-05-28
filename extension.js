@@ -44,6 +44,8 @@ const clipboard = require('./api/env/clipboard.js');
 const authorize = require('./api/authorize/index.js');
 const handleJson = require('./api/util/json.js');
 
+const showCommandPanel = require('./commandPanel.js');
+
 var DemoTreeDataProvider = require('./api/treeview/treeview.js').DemoTreeDataProvider;
 var showWebView = require('./api/webview/webview.js');
 var test = require('./test/test.js');
@@ -54,6 +56,11 @@ var CatCustomEditorProvider = require('./api/customEditor/custom.js');
 function activate(context) {
     hx.app.registService("api.pack_example", (context) => {
         console.log("path:" + context.pkgLocation);
+    });
+
+    // command
+    let CommandPanel = hx.commands.registerCommand('api.CommandPanel', () => {
+        showCommandPanel()
     });
     // run test
     let runtest = hx.commands.registerCommand('api.runtest', () => {

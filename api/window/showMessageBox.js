@@ -15,9 +15,9 @@ function showMessageBox() {
     let result = hx.window.showMessageBox({
         type: 'info',
         title: '测试对话框',
-        text: '已选择的商品，支付失败，请选择接下来的操作？',
-        buttons: ['继续支付', '关闭'],
-        defaultButton: 1,
+        text: '测试对话框？',
+        buttons: ['关闭','查询', '替换'],
+        defaultButton: -10,
         escapeButton: -1
     });
     result.then((button) => {
