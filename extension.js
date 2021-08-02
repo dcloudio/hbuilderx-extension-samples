@@ -15,6 +15,7 @@ const getActiveTextEditor = require('./api/window/getActiveTextEditor.js');
 const createOutputChannel = require('./api/window/createOutputChannel.js');
 const showInputBox = require('./api/window/showInputBox.js');
 const WebviewDialog = require('./api/window/WebviewDialog.js');
+const showFormDialog = require('./api/window/showFormDialog.js');
 
 const openTextDocument = require('./api/workspace/openTextDocument.js');
 const onWillSaveTextDocument = require('./api/workspace/onWillSaveTextDocument.js');
@@ -117,6 +118,10 @@ function activate(context) {
     // windows Api: createWebViewDialog
     let api_window_WebviewDialog = hx.commands.registerCommand('api.window_WebviewDialog', ()=> {
         WebviewDialog();
+    });
+    // windows Api: window_showFormDialog
+    let api_window_showFormDialog = hx.commands.registerCommand('api.window_showFormDialog', ()=> {
+        showFormDialog();
     });
 
     // windows Api: 获取当前激活的编辑器名称

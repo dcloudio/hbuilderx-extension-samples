@@ -25,6 +25,7 @@
         "onCommand:api.window_show_input_box",
         "onCommand:api.window_show_message_box",
         "onCommand:api.window_WebviewDialog",
+        "onCommand:api.window_showFormDialog",
         "onCommand:api.get_active_text_editor",
         "onCommand:api.get_active_text_editor_for_nature",
         "onCommand:api.get_active_text_editor_for_project_name",
@@ -180,6 +181,9 @@
             {
                 "command": "api.window_WebviewDialog",
                 "title": "WebviewDialog"
+            },{
+                "command": "api.window_showFormDialog",
+                "title": "showFormDialog"
             },
             {
                 "command": "api.window_show_quick_pick",
@@ -440,6 +444,11 @@
                     "command": "api.window_WebviewDialog",
                     "title": "WebviewDialog",
                     "group": "window@5"
+                },
+                {
+                    "command": "api.window_showFormDialog",
+                    "title": "showFormDialog",
+                    "group": "window@6"
                 },
                 {
                     "title": "插件api: workspace",
