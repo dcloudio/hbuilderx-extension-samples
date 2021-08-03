@@ -9,11 +9,10 @@ let hx = require('hbuilderx');
     - list 列表
     - label 描述
  */
-function getUIData(selected, formData) {
-    formData = formData || {};
+function getUIData(selected) {
     let ListTemplates = {
         javascript: [
-            {columns: [{label: "包含jquery的模板"}]},
+            {columns: [{label: "包含jquery的模板"},{"desc":"详情"}]},
             {columns: [{label: "包含vue.js的模板"}]}
         ],
         css: [
@@ -24,10 +23,6 @@ function getUIData(selected, formData) {
 
     let radioDefaultValue = selected ? selected : "javascript";
     let uiData = {
-        title: "showFormDialog",
-        subtitle: "插件API hx.window.showFormDialog测试用例",
-        width: 640,
-        height: 480,
         formItems: [{
                 type: "radioGroup",
                 name: "projectType",
@@ -37,12 +32,13 @@ function getUIData(selected, formData) {
                     {label: "javascript", id: "javascript" }
                 ]
             },
-            {type: "input",name: "projectName",label: "普通输入框",placeholder: '  '},
-            {type: "file",name: "projectLocation",label: "文件选择输入框",placeholder: ''},
+            {type: "input",name: "projectName",label: "普通输入框",placeholder: '这是一个普通输入框'},
+            {type: "file",name: "projectLocation",label: "文件选择输入框",placeholder: '这是一个文件选择输入框'},
+            {type: "checkBox",name: "checkBox", value:"复选框",label:"复选框"},
             {
                 type: "list",
                 title: "UI-列表",
-                columnStretchs: [1],
+                columnStretchs: [1,2],
                 items: ListTemplates[radioDefaultValue],
             },
             {type: "label",text: "备注：演示hx.window.showFormDialog的基本操作"}
@@ -61,6 +57,10 @@ async function showFormDialog() {
 
     hx.window.showFormDialog({
         ...uidata,
+        title: "showFormDialog",
+        subtitle: "插件API hx.window.showFormDialog测试用例",
+        width: 640,
+        height: 480,
         submitButtonText: "提交(&S)",
         cancelButtonText: "取消(&C)",
         validate: function (formData) {
