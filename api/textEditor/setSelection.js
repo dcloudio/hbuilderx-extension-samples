@@ -6,12 +6,12 @@ let hx = require('hbuilderx');
 function setSelection() {
     let activeEditor = hx.window.getActiveTextEditor();
     activeEditor.then(function(editor) {
-        editor.setSelection(3755, 3802).then(() => {
+        editor.setSelection(0, 50).then(() => {
             // editor.addSelection(16, 18);
-        })
+        });
     }).catch( error => {
         console.log('--------', error);
-    })
+    });
 }
 
 module.exports = {
