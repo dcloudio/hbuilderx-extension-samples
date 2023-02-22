@@ -10,38 +10,93 @@ let hx = require('hbuilderx');
     - label 描述
  */
 function getUIData(selected) {
-    let ListTemplates = {
-        javascript: [
-            {columns: [{label: "包含jquery的模板"},{"desc":"详情"}]},
-            {columns: [{label: "包含vue.js的模板"}]}
-        ],
-        css: [
-            {columns: [{label: "包含less的模板"}]},
-            {columns: [{label: "包含stylus的模板"}]}
-        ]
-    };
-
-    let radioDefaultValue = selected ? selected : "javascript";
     let uiData = {
-        formItems: [{
+        formItems: [
+            {
+                type: "label",
+                name: "label1",
+                text: "这是一个文本展示组件，主要用来放置描述文字，欢迎大家开发HBuilderX插件"
+            },
+            {
+                type: "input",
+                name: "projectName",
+                label: "普通输入框",
+                placeholder: '这是一个普通输入框',
+                value: ""
+            },
+            {
+                type: "input",
+                name: "projectName",
+                label: "普通输入框",
+                placeholder: '这是一个普通输入框',
+                value: "uni-app",
+                disabled: true
+            },
+            {
+                type: "fileSelectInput",
+                name: "projectLocation",
+                label: "文件选择输入框",
+                placeholder: '这是一个文件选择输入框, 只能选择html和json文件',
+                value: "",
+                mode: "file",
+                filters: ["*.html;*.json"]
+            },
+            {
+              type: "comboBox",
+              placeholder: "请输入",
+              name: "functionNameInput",
+              label: "组合下拉框",
+              editable: true,
+              items: ["item1","item2","item3"],
+              text: "item1"
+            },
+            {
+                type: "checkBox",
+                name: "checkBox",
+                value: "复选框",
+                label: "复选框"
+            },
+            {
                 type: "radioGroup",
                 name: "projectType",
-                value: radioDefaultValue,
+                label: "单选框",
+                value: "css",
                 items: [
-                    {label: "css", id: "css"},
-                    {label: "javascript", id: "javascript" }
+                    {label: "css",id: "css"},
+                    {label: "html",id: "html"},
+                    {label: "javascript",id: "javascript"},
+                    {label: "typescript",id: "typescript"},
+                    {label: "php",id: "php"}
                 ]
             },
-            {type: "input",name: "projectName",label: "普通输入框",placeholder: '这是一个普通输入框'},
-            {type: "file",name: "projectLocation",label: "文件选择输入框",placeholder: '这是一个文件选择输入框'},
-            {type: "checkBox",name: "checkBox", value:"复选框",label:"复选框"},
             {
-                type: "list",
-                title: "UI-列表",
-                columnStretchs: [1,2],
-                items: ListTemplates[radioDefaultValue],
+                type: "textEditor",
+                name: "paramsInput",
+                title: "标题",
+                languageId: "json",
+                text: "{\n\"params\":[\n]}",
             },
-            {type: "label",text: "备注：演示hx.window.showFormDialog的基本操作"}
+            {
+              "type": "list",
+              "title": "选择框",
+              "name": "list1",
+              "columnStretches": [1, 2],
+              "items": [
+                {
+                  "columns": [
+                    {"label": "百度"},
+                    {"label": "百度一下<a href='www.baidu.com'>百度</a>"}
+                  ]
+                },
+                {
+                  "columns": [
+                    {"label": "Google"},
+                    {"label": "谷歌一下<a href='www.Google.com'>Google</a>"}
+                  ]
+                }
+              ],
+              "value": 0
+            }
         ]
     }
     return uiData;
@@ -53,22 +108,22 @@ function getUIData(selected) {
  */
 async function showFormDialog() {
     // 获取默认UI数据
-    let uidata = getUIData("javascript")
+    let uidata = getUIData()
 
     hx.window.showFormDialog({
         ...uidata,
         title: "showFormDialog",
         subtitle: "插件API hx.window.showFormDialog测试用例",
         width: 640,
-        height: 480,
+        height: 780,
         submitButtonText: "提交(&S)",
         cancelButtonText: "取消(&C)",
-        validate: function (formData) {
+        validate: function(formData) {
             if (!formData.projectName) {
                 this.showError("普通输入框不能为空，请填写");
                 return false;
-          };
-          return true;
+            };
+            return true;
         },
         onChanged: function(field, value) {
             if (field == "projectType") {
