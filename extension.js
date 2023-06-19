@@ -16,6 +16,7 @@ const createOutputChannel = require('./api/window/createOutputChannel.js');
 const showInputBox = require('./api/window/showInputBox.js');
 const WebviewDialog = require('./api/window/WebviewDialog.js');
 const showFormDialog = require('./api/window/showFormDialog.js');
+const createStatusBarItem = require('./api/window/createStatusBarItem.js');
 
 const openTextDocument = require('./api/workspace/openTextDocument.js');
 const onWillSaveTextDocument = require('./api/workspace/onWillSaveTextDocument.js');
@@ -53,6 +54,7 @@ var test = require('./test/test.js');
 
 var CatCustomEditorProvider = require('./api/customEditor/custom.js');
 
+
 //该方法将在插件激活的时候调用
 function activate(context) {
     hx.app.registService("api.pack_example", (context) => {
@@ -61,7 +63,7 @@ function activate(context) {
 
     // command
     let CommandPanel = hx.commands.registerCommand('api.CommandPanel', () => {
-        showCommandPanel()
+        showCommandPanel();
     });
     context.subscriptions.push(CommandPanel);
 
@@ -77,107 +79,113 @@ function activate(context) {
     });
     context.subscriptions.push(api_commands);
 
-    // windows Api: 设置状态栏消息 info
+    // window Api: 设置状态栏消息 info
     let api_status_bar_info_message = hx.commands.registerCommand('api.status_bar_info_message', () => {
         setStatusBarMessage.setStatusBarMessage("info");
     });
     context.subscriptions.push(api_status_bar_info_message);
 
-    // windows Api: 设置状态栏消息 error
+    // window Api: 设置状态栏消息 error
     let api_status_bar_error_message = hx.commands.registerCommand('api.status_bar_error_message', () => {
         setStatusBarMessage.setStatusBarMessage("error");
     });
     context.subscriptions.push(api_status_bar_error_message);
 
-    // windows Api: 设置状态栏消息 warn
+    // window Api: 设置状态栏消息 warn
     let api_status_bar_warn_message = hx.commands.registerCommand('api.status_bar_warn_message', () => {
         setStatusBarMessage.setStatusBarMessage("warn");
     });
     context.subscriptions.push(api_status_bar_warn_message);
 
-    // windows Api: 设置状态栏消息 warn
+    // window Api: 设置状态栏消息 warn
     let api_status_bar_timeout_message = hx.commands.registerCommand('api.status_bar_timeout_message', () => {
         setStatusBarMessage.setStatusBarMessage("info", 2000);
     });
     context.subscriptions.push(api_status_bar_timeout_message);
 
-    // windows Api: 清空设置状态栏消息
+    // window Api: 清空设置状态栏消息
     let api_clear_status_bar_message = hx.commands.registerCommand('api.clear_status_bar_message', () => {
         clearStatusBarMessage.clearStatusBarMessage();
     });
     context.subscriptions.push(api_clear_status_bar_message);
 
-    // windows Api: 右下角错误通知栏
+    // window Api: 右下角错误通知栏
     let api_show_error_message = hx.commands.registerCommand('api.show_error_message', () => {
         showErrorMessage.showErrorMessage();
     });
     context.subscriptions.push(api_show_error_message);
 
-    // windows Api: 右下角info通知栏
+    // window Api: 右下角info通知栏
     let api_show_info_message = hx.commands.registerCommand('api.show_info_message', () => {
         showInformationMessage.showInformationMessage();
     });
     context.subscriptions.push(api_show_info_message);
 
-    // windows Api: 右下角warning通知栏
+    // window Api: 右下角warning通知栏
     let api_show_warning_message = hx.commands.registerCommand('api.show_warning_message', () => {
         showWarningMessage.showWarningMessage();
     });
     context.subscriptions.push(api_show_warning_message);
 
-    // windows Api: show Box
+    // window Api: show Box
     let api_window_show_message_box = hx.commands.registerCommand('api.window_show_message_box', () => {
         showMessageBox();
     });
     context.subscriptions.push(api_window_show_message_box);
 
-    // windows Api: 在窗口中间弹出一个可搜索的建议选择列表
+    // window Api: 在窗口中间弹出一个可搜索的建议选择列表
     let api_window_show_quick_pick = hx.commands.registerCommand('api.window_show_quick_pick', () => {
         showQuickPick.showQuickPick();
     });
     context.subscriptions.push(api_window_show_quick_pick);
 
-    // windows Api: show_input_box
+    // window Api: show_input_box
     let api_window_show_input_box = hx.commands.registerCommand('api.window_show_input_box', () => {
         showInputBox.showInputBox();
     });
     context.subscriptions.push(api_window_show_input_box);
 
-    // windows Api: createWebViewDialog
+    // window Api: createWebViewDialog
     let api_window_WebviewDialog = hx.commands.registerCommand('api.window_WebviewDialog', ()=> {
         WebviewDialog();
     });
     context.subscriptions.push(api_window_WebviewDialog);
 
-    // windows Api: window_showFormDialog
+    // window Api: window_showFormDialog
     let api_window_showFormDialog = hx.commands.registerCommand('api.window_showFormDialog', ()=> {
         showFormDialog();
     });
     context.subscriptions.push(api_window_showFormDialog);
 
-    // windows Api: 获取当前激活的编辑器名称
+    // window Api: 获取当前激活的编辑器名称
     let api_get_active_text_editor = hx.commands.registerCommand('api.get_active_text_editor', () => {
         getActiveTextEditor.getActiveTextEditor("filename");
     });
     context.subscriptions.push(api_get_active_text_editor);
 
-    // windows Api: 获取项目类型
+    // window Api: 获取项目类型
     let api_get_active_text_editor_for_nature = hx.commands.registerCommand('api.get_active_text_editor_for_nature', () => {
         getActiveTextEditor.getActiveTextEditor("nature");
     });
     context.subscriptions.push(api_get_active_text_editor_for_nature);
 
-    // windows Api: 获取项目名称
+    // window Api: 获取项目名称
     let api_get_active_text_editor_for_project_name = hx.commands.registerCommand('api.get_active_text_editor_for_project_name', () => {
         getActiveTextEditor.getActiveTextEditor("project_name");
     });
     context.subscriptions.push(api_get_active_text_editor_for_project_name);
 
-    // windows Api: 创建输出控制台
+    // window Api: 创建输出控制台
     let api_window_create_output_channel = hx.commands.registerCommand('api.window_create_output_channel', () => {
         createOutputChannel.createOutputChannel();
     });
     context.subscriptions.push(api_window_create_output_channel);
+    
+    // window Api: createStatusBarItem
+    let api_window_createStatusBarItem = hx.commands.registerCommand('api.window_createStatusBarItem', () => {
+        createStatusBarItem();
+    });
+    context.subscriptions.push(api_window_createStatusBarItem);
 
     // workspace Api: 通过uri打开文档
     let api_open_text_document = hx.commands.registerCommand('api.open_text_document', () => {
@@ -262,7 +270,7 @@ function activate(context) {
     });
     context.subscriptions.push(api_workspace_copy_file_with_prompt);
 
-    // windows Api: 打印uri所有信息
+    // window Api: 打印uri所有信息
     let api_uri = hx.commands.registerCommand('api.uri', () => {
         uri.uri();
     });
@@ -401,10 +409,13 @@ function activate(context) {
     context.subscriptions.push(hjson);
 };
 
+
 //该方法将在插件禁用的时候调用（目前是在插件卸载的时候触发）
 function deactivate() {
 
-}
+};
+
+
 module.exports = {
     activate,
     deactivate
