@@ -53,6 +53,7 @@ var showWebView = require('./api/webview/webview.js');
 var test = require('./test/test.js');
 
 var CatCustomEditorProvider = require('./api/customEditor/custom.js');
+var ui_vue = require('./hx_vue/vue_main.js');
 
 
 //该方法将在插件激活的时候调用
@@ -407,6 +408,12 @@ function activate(context) {
         rwJson.main();
     });
     context.subscriptions.push(hjson);
+
+    // ui-vue
+    let uiVue = hx.commands.registerCommand('api.vueUI', () => {
+        ui_vue();
+    });
+    context.subscriptions.push(uiVue);
 };
 
 

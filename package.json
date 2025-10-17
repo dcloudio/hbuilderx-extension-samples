@@ -6,79 +6,134 @@
     "engines": {
         "HBuilderX": "^2.7.0"
     },
-    "categories": ["Other"],
+    "categories": [
+        "Other"
+    ],
     "main": "./extension",
-    "activationEvents": ["onCommand:api.commands", "onCommand:api.CommandPanel",
-        "onCommand:api.status_bar_info_message", "onCommand:api.status_bar_warn_message",
-        "onCommand:api.status_bar_error_message", "onCommand:api.status_bar_timeout_message",
-        "onCommand:api.clear_status_bar_message", "onCommand:api.show_error_message",
-        "onCommand:api.show_info_message", "onCommand:api.show_warning_message",
-        "onCommand:api.window_show_quick_pick", "onCommand:api.window_show_input_box",
-        "onCommand:api.window_show_message_box", "onCommand:api.window_WebviewDialog",
-        "onCommand:api.window_showFormDialog", "onCommand:api.window_createStatusBarItem",
-        "onCommand:api.get_active_text_editor", "onCommand:api.get_active_text_editor_for_nature",
-        "onCommand:api.get_active_text_editor_for_project_name", "onCommand:api.window_create_output_channel",
-        "onCommand:api.open_text_document", "onCommand:api.on_will_save_text_document",
-        "onCommand:api.on_did_change_text_document", "onCommand:api.on_did_open_text_document",
-        "onCommand:api.workspace_apply_edit", "onCommand:api.workspace_get_configuration",
-        "onCommand:api.workspace_update_configuration", "onCommand:api.workspace_add_configuration",
-        "onCommand:api.get_workspace_folders", "onCommand:api.get_workspace_folder",
-        "onCommand:api.on_did_chanage_configuration", "onCommand:api.on_did_change_forkspace_folders",
-        "onCommand:api.workspace_copy_file_with_prompt", "onCommand:api.text_editor",
-        "onCommand:api.text_editor_linetext", "onCommand:api.text_editor_line_to_upper_case",
-        "onCommand:api.text_editor_indent", "onCommand:api.text_lineFromPosition", "onCommand:api.text_lineAt",
-        "onCommand:api.text_getText", "onCommand:api.set_selection", "onCommand:api.uri",
-        "onCommand:api.languages_create_diagnostics_collection", "onCommand:api.open_help",
-        "onCommand:api.openExternal_url", "onCommand:api.openExternal_mail", "onCommand:api.clipboard_write",
-        "onCommand:api.clipboard_read", "onCommand:api.authorize_login", "onCommand:api.authorize_logout",
-        "onCommand:api.util_handleJson", "onView:api.treedemo", "onView:api.WebView", "onView:api.WebView2",
-        "onCommand:api.runtest", "onCommand:api.CustomEditor", "onCustomEditor:catEdit.catScratch",
-        "onAppService:api.pack_example"
+    "activationEvents": [
+        "onCommand:api.commands",
+        "onCommand:api.CommandPanel",
+        "onCommand:api.status_bar_info_message",
+        "onCommand:api.status_bar_warn_message",
+        "onCommand:api.status_bar_error_message",
+        "onCommand:api.status_bar_timeout_message",
+        "onCommand:api.clear_status_bar_message",
+        "onCommand:api.show_error_message",
+        "onCommand:api.show_info_message",
+        "onCommand:api.show_warning_message",
+        "onCommand:api.window_show_quick_pick",
+        "onCommand:api.window_show_input_box",
+        "onCommand:api.window_show_message_box",
+        "onCommand:api.window_WebviewDialog",
+        "onCommand:api.window_showFormDialog",
+        "onCommand:api.window_createStatusBarItem",
+        "onCommand:api.get_active_text_editor",
+        "onCommand:api.get_active_text_editor_for_nature",
+        "onCommand:api.get_active_text_editor_for_project_name",
+        "onCommand:api.window_create_output_channel",
+        "onCommand:api.open_text_document",
+        "onCommand:api.on_will_save_text_document",
+        "onCommand:api.on_did_change_text_document",
+        "onCommand:api.on_did_open_text_document",
+        "onCommand:api.workspace_apply_edit",
+        "onCommand:api.workspace_get_configuration",
+        "onCommand:api.workspace_update_configuration",
+        "onCommand:api.workspace_add_configuration",
+        "onCommand:api.get_workspace_folders",
+        "onCommand:api.get_workspace_folder",
+        "onCommand:api.on_did_chanage_configuration",
+        "onCommand:api.on_did_change_forkspace_folders",
+        "onCommand:api.workspace_copy_file_with_prompt",
+        "onCommand:api.text_editor",
+        "onCommand:api.text_editor_linetext",
+        "onCommand:api.text_editor_line_to_upper_case",
+        "onCommand:api.text_editor_indent",
+        "onCommand:api.text_lineFromPosition",
+        "onCommand:api.text_lineAt",
+        "onCommand:api.text_getText",
+        "onCommand:api.set_selection",
+        "onCommand:api.uri",
+        "onCommand:api.languages_create_diagnostics_collection",
+        "onCommand:api.open_help",
+        "onCommand:api.openExternal_url",
+        "onCommand:api.openExternal_mail",
+        "onCommand:api.clipboard_write",
+        "onCommand:api.clipboard_read",
+        "onCommand:api.authorize_login",
+        "onCommand:api.authorize_logout",
+        "onCommand:api.util_handleJson",
+        "onView:api.treedemo",
+        "onView:api.WebView",
+        "onView:api.WebView2",
+        "onCommand:api.runtest",
+        "onCommand:api.CustomEditor",
+        "onCustomEditor:catEdit.catScratch",
+        "onAppService:api.pack_example",
+        "onCommand:api.vueUI"
     ],
     "contributes": {
         "viewsContainers": {
-            "activitybar": [{
-                "id": "demoview",
-                "title": "DemoView"
-            }, {
-                "id": "WebViewcontainerId2",
-                "title": "webview好好工作"
-            }],
-            "rightside": [{
-                "id": "WebViewcontainerId",
-                "title": "webview好好学习"
-            }]
+            "activitybar": [
+                {
+                    "id": "demoview",
+                    "title": "DemoView"
+                },
+                {
+                    "id": "WebViewcontainerId2",
+                    "title": "webview好好工作"
+                }
+            ],
+            "rightside": [
+                {
+                    "id": "WebViewcontainerId",
+                    "title": "webview好好学习"
+                }
+            ]
         },
         "views": {
-            "demoview": [{
-                "id": "api.treedemo",
-                "name": "DemoView"
-            }],
-            "WebViewcontainerId": [{
-                "id": "api.WebView",
-                "title": "webview - 好好工作"
-            }],
-            "WebViewcontainerId2": [{
-                "id": "api.WebView2",
-                "title": "webview - 好好学习"
-            }]
+            "demoview": [
+                {
+                    "id": "api.treedemo",
+                    "name": "DemoView"
+                }
+            ],
+            "WebViewcontainerId": [
+                {
+                    "id": "api.WebView",
+                    "title": "webview - 好好工作"
+                }
+            ],
+            "WebViewcontainerId2": [
+                {
+                    "id": "api.WebView2",
+                    "title": "webview - 好好学习"
+                }
+            ]
         },
-        "app-services": [{
-            "title": "打包扩展",
-            "handler": "api.pack_example"
-        }],
-        "customEditors": [{
-            "viewType": "catEdit.catScratch",
-            "displayName": "Cat Scratch",
-            "selector": [{
-                "fileNamePattern": "*.cscratch"
-            }],
-            "priority": "default"
-        }],
-        "snippets": [{
-            "language": "python",
-            "path": "./snippets/python.json"
-        }],
+        "app-services": [
+            {
+                "title": "打包扩展",
+                "handler": "api.pack_example"
+            }
+        ],
+        "customEditors": [
+            {
+                "viewType": "catEdit.catScratch",
+                "displayName": "Cat Scratch",
+                "selector": [
+                    {
+                        "fileNamePattern": "*.cscratch"
+                    }
+                ],
+                "priority": "default"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "python",
+                "path": "./snippets/python.json"
+            }
+        ],
         "configuration": {
             "title": "hbuilderx-extension-samples",
             "properties": {
@@ -104,443 +159,582 @@
                 }
             }
         },
-        "commands": [{
-            "command": "api.runtest",
-            "title": "api 测试"
-        }, {
-            "command": "api.CommandPanel",
-            "title": "打开API命令面板"
-        }, {
-            "command": "api.commands",
-            "title": "执行内置命令"
-        }, {
-            "command": "api.status_bar_info_message",
-            "title": "setStatusBarMessage 状态栏info消息"
-        }, {
-            "command": "api.status_bar_warn_message",
-            "title": "setStatusBarMessage 状态栏warn消息"
-        }, {
-            "command": "api.status_bar_error_message",
-            "title": "setStatusBarMessage 状态栏error消息"
-        }, {
-            "command": "api.status_bar_timeout_message",
-            "title": "setStatusBarMessage 状态栏消息: 2s自动隐藏"
-        }, {
-            "command": "api.clear_status_bar_message",
-            "title": "clearStatusBarMessage 清空状态栏消息"
-        }, {
-            "command": "api.show_error_message",
-            "title": "showErrorMessage 右下角error通知框"
-        }, {
-            "command": "api.show_info_message",
-            "title": "showInformationMessage 右下角info通知框"
-        }, {
-            "command": "api.show_warning_message",
-            "title": "showWarningMessage 右下角warning通知框"
-        }, {
-            "command": "api.window_show_message_box",
-            "title": "showMessageBox 对话框"
-        }, {
-            "command": "api.window_WebviewDialog",
-            "title": "WebviewDialog"
-        }, {
-            "command": "api.window_showFormDialog",
-            "title": "showFormDialog"
-        }, {
-            "command": "api.window_show_quick_pick",
-            "title": "showQuickPick 在窗口中间弹出一个可搜索的建议选择列表"
-        }, {
-            "command": "api.window_createStatusBarItem",
-            "title": "创建一个状态栏元素"
-        }, {
-            "command": "api.get_active_text_editor",
-            "title": "getActiveTextEditor 当前激活的编辑器名称"
-        }, {
-            "command": "api.get_active_text_editor_for_nature",
-            "title": "getActiveTextEditor 获取项目类型"
-        }, {
-            "command": "api.get_active_text_editor_for_project_name",
-            "title": "getActiveTextEditor 获取项目名称"
-        }, {
-            "command": "api.window_create_output_channel",
-            "title": "createOutputChannel 创建输出控制台"
-        }, {
-            "command": "api.window_show_input_box",
-            "title": "输入框"
-        }, {
-            "command": "api.open_text_document",
-            "title": "openTextDocument 打开指定文档"
-        }, {
-            "command": "api.on_will_save_text_document",
-            "title": "onWillSaveTextDocument 文档即将要保存的事件"
-        }, {
-            "command": "api.on_did_change_text_document",
-            "title": "onDidChangeTextDocument 文档被修改时的事件"
-        }, {
-            "command": "api.on_did_save_text_document",
-            "title": "onDidSaveTextDocument 文档被保存时的事件"
-        }, {
-            "command": "api.on_did_open_text_document",
-            "title": "onDidOpenTextDocument 文档打开时的事件"
-        }, {
-            "command": "api.on_did_change_forkspace_folders",
-            "title": "onDidChangeWorkspaceFolders 项目管理器内的项目新增或者移除时产生的事件"
-        }, {
-            "command": "api.get_workspace_folders",
-            "title": "getWorkspaceFolders 获取项目管理器下所有的项目对象"
-        }, {
-            "command": "api.get_workspace_folder",
-            "title": "getWorkspaceFolder 获取某个文件所在的项目"
-        }, {
-            "command": "api.on_did_chanage_configuration",
-            "title": "onDidChangeConfiguration 全局配置改变事件"
-        }, {
-            "command": "api.workspace_copy_file_with_prompt",
-            "title": "copyFileWithPrompt 复制文件"
-        }, {
-            "command": "api.workspace_apply_edit",
-            "title": "applyEdit 执行指定的文档编辑操作"
-        }, {
-            "command": "api.workspace_get_configuration",
-            "title": "getCongiguration 根据指定的section获取对应配置"
-        }, {
-            "command": "api.workspace_update_configuration",
-            "title": "getCongiguration 根据指定的section更新对应配置"
-        }, {
-            "command": "api.workspace_add_configuration",
-            "title": "getCongiguration 插入新值"
-        }, {
-            "command": "api.uri",
-            "title": "getActiveTextEditor uri"
-        }, {
-            "command": "api.text_editor",
-            "title": "TextEditor"
-        }, {
-            "command": "api.text_editor_linetext",
-            "title": "TextEditor 当前光标所在行内容"
-        }, {
-            "command": "api.text_editor_line_to_upper_case",
-            "title": "TextEditor 当前选中内容，由小写转换大写"
-        }, {
-            "command": "api.text_editor_indent",
-            "title": "TextEditor 获取当前文件缩进符长度"
-        }, {
-            "command": "api.text_lineFromPosition",
-            "title": "TextEditor 获取当前光标所在行内容"
-        }, {
-            "command": "api.text_lineAt",
-            "title": "TextEditor 获取指定行内容"
-        }, {
-            "command": "api.text_getText",
-            "title": "TextEditor 获取指定区域内容"
-        }, {
-            "command": "api.set_selection",
-            "title": "TextEditor setSelection"
-        }, {
-            "command": "api.languages_create_diagnostics_collection",
-            "title": "创建问题集合"
-        }, {
-            "command": "api.open_help",
-            "title": "HBuilderX插件开发文档"
-        }, {
-            "command": "api.openExternal_url",
-            "title": "打开外部链接"
-        }, {
-            "command": "api.openExternal_mail",
-            "title": "发送邮件"
-        }, {
-            "command": "api.clipboard_write",
-            "title": "写入剪切板"
-        }, {
-            "command": "api.clipboard_read",
-            "title": "读取剪切板"
-        }, {
-            "command": "api.CustomEditor",
-            "title": "打开自定义编辑器"
-        }, {
-            "command": "api.authorize_login",
-            "title": "用户认证"
-        }, {
-            "command": "api.authorize_logout",
-            "title": "用户退出登录"
-        }, {
-            "command": "api.util_handleJson",
-            "title": "操作json"
-        }],
+        "commands": [
+            {
+                "command": "api.runtest",
+                "title": "api 测试"
+            },
+            {
+                "command": "api.CommandPanel",
+                "title": "打开API命令面板"
+            },
+            {
+                "command": "api.commands",
+                "title": "执行内置命令"
+            },
+            {
+                "command": "api.status_bar_info_message",
+                "title": "setStatusBarMessage 状态栏info消息"
+            },
+            {
+                "command": "api.status_bar_warn_message",
+                "title": "setStatusBarMessage 状态栏warn消息"
+            },
+            {
+                "command": "api.status_bar_error_message",
+                "title": "setStatusBarMessage 状态栏error消息"
+            },
+            {
+                "command": "api.status_bar_timeout_message",
+                "title": "setStatusBarMessage 状态栏消息: 2s自动隐藏"
+            },
+            {
+                "command": "api.clear_status_bar_message",
+                "title": "clearStatusBarMessage 清空状态栏消息"
+            },
+            {
+                "command": "api.show_error_message",
+                "title": "showErrorMessage 右下角error通知框"
+            },
+            {
+                "command": "api.show_info_message",
+                "title": "showInformationMessage 右下角info通知框"
+            },
+            {
+                "command": "api.show_warning_message",
+                "title": "showWarningMessage 右下角warning通知框"
+            },
+            {
+                "command": "api.window_show_message_box",
+                "title": "showMessageBox 对话框"
+            },
+            {
+                "command": "api.window_WebviewDialog",
+                "title": "WebviewDialog"
+            },
+            {
+                "command": "api.window_showFormDialog",
+                "title": "showFormDialog"
+            },
+            {
+                "command": "api.window_show_quick_pick",
+                "title": "showQuickPick 在窗口中间弹出一个可搜索的建议选择列表"
+            },
+            {
+                "command": "api.window_createStatusBarItem",
+                "title": "创建一个状态栏元素"
+            },
+            {
+                "command": "api.get_active_text_editor",
+                "title": "getActiveTextEditor 当前激活的编辑器名称"
+            },
+            {
+                "command": "api.get_active_text_editor_for_nature",
+                "title": "getActiveTextEditor 获取项目类型"
+            },
+            {
+                "command": "api.get_active_text_editor_for_project_name",
+                "title": "getActiveTextEditor 获取项目名称"
+            },
+            {
+                "command": "api.window_create_output_channel",
+                "title": "createOutputChannel 创建输出控制台"
+            },
+            {
+                "command": "api.window_show_input_box",
+                "title": "输入框"
+            },
+            {
+                "command": "api.open_text_document",
+                "title": "openTextDocument 打开指定文档"
+            },
+            {
+                "command": "api.on_will_save_text_document",
+                "title": "onWillSaveTextDocument 文档即将要保存的事件"
+            },
+            {
+                "command": "api.on_did_change_text_document",
+                "title": "onDidChangeTextDocument 文档被修改时的事件"
+            },
+            {
+                "command": "api.on_did_save_text_document",
+                "title": "onDidSaveTextDocument 文档被保存时的事件"
+            },
+            {
+                "command": "api.on_did_open_text_document",
+                "title": "onDidOpenTextDocument 文档打开时的事件"
+            },
+            {
+                "command": "api.on_did_change_forkspace_folders",
+                "title": "onDidChangeWorkspaceFolders 项目管理器内的项目新增或者移除时产生的事件"
+            },
+            {
+                "command": "api.get_workspace_folders",
+                "title": "getWorkspaceFolders 获取项目管理器下所有的项目对象"
+            },
+            {
+                "command": "api.get_workspace_folder",
+                "title": "getWorkspaceFolder 获取某个文件所在的项目"
+            },
+            {
+                "command": "api.on_did_chanage_configuration",
+                "title": "onDidChangeConfiguration 全局配置改变事件"
+            },
+            {
+                "command": "api.workspace_copy_file_with_prompt",
+                "title": "copyFileWithPrompt 复制文件"
+            },
+            {
+                "command": "api.workspace_apply_edit",
+                "title": "applyEdit 执行指定的文档编辑操作"
+            },
+            {
+                "command": "api.workspace_get_configuration",
+                "title": "getCongiguration 根据指定的section获取对应配置"
+            },
+            {
+                "command": "api.workspace_update_configuration",
+                "title": "getCongiguration 根据指定的section更新对应配置"
+            },
+            {
+                "command": "api.workspace_add_configuration",
+                "title": "getCongiguration 插入新值"
+            },
+            {
+                "command": "api.uri",
+                "title": "getActiveTextEditor uri"
+            },
+            {
+                "command": "api.text_editor",
+                "title": "TextEditor"
+            },
+            {
+                "command": "api.text_editor_linetext",
+                "title": "TextEditor 当前光标所在行内容"
+            },
+            {
+                "command": "api.text_editor_line_to_upper_case",
+                "title": "TextEditor 当前选中内容，由小写转换大写"
+            },
+            {
+                "command": "api.text_editor_indent",
+                "title": "TextEditor 获取当前文件缩进符长度"
+            },
+            {
+                "command": "api.text_lineFromPosition",
+                "title": "TextEditor 获取当前光标所在行内容"
+            },
+            {
+                "command": "api.text_lineAt",
+                "title": "TextEditor 获取指定行内容"
+            },
+            {
+                "command": "api.text_getText",
+                "title": "TextEditor 获取指定区域内容"
+            },
+            {
+                "command": "api.set_selection",
+                "title": "TextEditor setSelection"
+            },
+            {
+                "command": "api.languages_create_diagnostics_collection",
+                "title": "创建问题集合"
+            },
+            {
+                "command": "api.open_help",
+                "title": "HBuilderX插件开发文档"
+            },
+            {
+                "command": "api.openExternal_url",
+                "title": "打开外部链接"
+            },
+            {
+                "command": "api.openExternal_mail",
+                "title": "发送邮件"
+            },
+            {
+                "command": "api.clipboard_write",
+                "title": "写入剪切板"
+            },
+            {
+                "command": "api.clipboard_read",
+                "title": "读取剪切板"
+            },
+            {
+                "command": "api.CustomEditor",
+                "title": "打开自定义编辑器"
+            },
+            {
+                "command": "api.authorize_login",
+                "title": "用户认证"
+            },
+            {
+                "command": "api.authorize_logout",
+                "title": "用户退出登录"
+            },
+            {
+                "command": "api.util_handleJson",
+                "title": "操作json"
+            },
+            {
+                "command": "api.vueUI",
+                "title": "Vue扩展示例"
+            }
+        ],
         "menus": {
             "explorer/context": [],
-            "menubar/tool": [{
-                "command": "api.CommandPanel",
-                "title": "HBuilderX API命令面板"
-            }],
-            "menubar/help": [{
-                "command": "api.open_help",
-                "title": "HBuilderX插件开发文档",
-                "group": "documents"
-            }],
-            "editor/context": [{
-                "title": "插件api: commands",
-                "group": "z_commands",
-                "id": "builtIn"
-            }, {
-                "command": "api.commands",
-                "title": "执行内置命令: 关闭所有打开的编辑器",
-                "group": "builtIn@1"
-            }, {
-                "title": "插件api: 状态栏消息",
-                "group": "z_commands",
-                "id": "statusBarMessage"
-            }, {
-                "command": "api.status_bar_info_message",
-                "title": "info消息",
-                "group": "statusBarMessage@1"
-            }, {
-                "command": "api.status_bar_error_message",
-                "title": "error消息",
-                "group": "statusBarMessage@2"
-            }, {
-                "command": "api.status_bar_warn_message",
-                "title": "warning消息",
-                "group": "statusBarMessage@3"
-            }, {
-                "command": "api.status_bar_timeout_message",
-                "title": "2s后自动隐藏",
-                "group": "statusBarMessage@4"
-            }, {
-                "command": "api.clear_status_bar_message",
-                "title": "清空状态栏消息",
-                "group": "statusBarMessage@5"
-            }, {
-                "title": "插件api: 右下角通知框",
-                "group": "z_commands",
-                "id": "message"
-            }, {
-                "command": "api.show_error_message",
-                "title": "error通知框",
-                "group": "message@1"
-            }, {
-                "command": "api.show_info_message",
-                "title": "info通知框",
-                "group": "message@2"
-            }, {
-                "command": "api.show_warning_message",
-                "title": "warning通知框",
-                "group": "message@3"
-            }, {
-                "title": "插件api: window",
-                "group": "z_commands",
-                "id": "window"
-            }, {
-                "command": "api.window_show_quick_pick",
-                "title": "QuickPick",
-                "group": "window@1"
-            }, {
-                "command": "api.window_create_output_channel",
-                "title": "创建输出控制台",
-                "group": "window@2"
-            }, {
-                "command": "api.window_show_input_box",
-                "title": "显示输入框",
-                "group": "window@3"
-            }, {
-                "command": "api.window_show_message_box",
-                "title": "显示对话框",
-                "group": "window@4"
-            }, {
-                "command": "api.window_WebviewDialog",
-                "title": "WebviewDialog",
-                "group": "window@5"
-            }, {
-                "command": "api.window_showFormDialog",
-                "title": "showFormDialog",
-                "group": "window@6"
-            }, {
-                "command": "api.window_createStatusBarItem",
-                "title": "createStatusBarItem",
-                "group": "window@7"
-            }, {
-                "title": "插件api: workspace",
-                "id": "workspace",
-                "group": "z_commands"
-            }, {
-                "command": "api.open_text_document",
-                "title": "openTextDocument",
-                "group": "workspace@1"
-            }, {
-                "command": "api.on_will_save_text_document",
-                "title": "onWillSaveTextDocument",
-                "group": "workspace@2"
-            }, {
-                "command": "api.on_did_change_text_document",
-                "title": "onDidChangeTextDocument",
-                "group": "workspace@3"
-            }, {
-                "command": "api.on_did_save_text_document",
-                "title": "onDidSaveTextDocument",
-                "group": "workspace@4"
-            }, {
-                "command": "api.on_did_open_text_document",
-                "title": "onDidOpenTextDocument",
-                "group": "workspace@5"
-            }, {
-                "group": "workspace@6"
-            }, {
-                "command": "api.on_did_change_forkspace_folders",
-                "title": "onDidChangeWorkspaceFolders",
-                "group": "workspace@6"
-            }, {
-                "command": "api.get_workspace_folders",
-                "title": "获取项目管理器下所有的项目对象",
-                "group": "workspace@6"
-            }, {
-                "command": "api.get_workspace_folder",
-                "title": "获取某个文件所在的项目",
-                "group": "workspace@6"
-            }, {
-                "group": "workspace@7"
-            }, {
-                "command": "api.workspace_apply_edit",
-                "title": "applyEdit",
-                "group": "workspace@7"
-            }, {
-                "group": "workspace@8"
-            }, {
-                "command": "api.workspace_get_configuration",
-                "title": "获取配置 getConfiguration",
-                "group": "workspace@9"
-            }, {
-                "command": "api.workspace_update_configuration",
-                "title": "更新配置 getConfiguration",
-                "group": "workspace@10"
-            }, {
-                "command": "api.workspace_add_configuration",
-                "title": "新增配置 getConfiguration",
-                "group": "workspace@11"
-            }, {
-                "command": "api.on_did_chanage_configuration",
-                "title": "onDidChangeConfiguration",
-                "group": "workspace@12"
-            }, {
-                "command": "api.workspace_copy_file_with_prompt",
-                "title": "copyFileWithPrompt",
-                "group": "workspace@13"
-            }, {
-                "title": "插件api: getActiveTextEditor",
-                "id": "getActiveTextEditor",
-                "group": "z_commands"
-            }, {
-                "command": "api.get_active_text_editor",
-                "title": "显示当前激活的编辑器名称",
-                "group": "getActiveTextEditor@1"
-            }, {
-                "command": "api.get_active_text_editor_for_nature",
-                "title": "获取项目类型",
-                "group": "getActiveTextEditor@2"
-            }, {
-                "command": "api.get_active_text_editor_for_project_name",
-                "title": "获取项目名称",
-                "group": "getActiveTextEditor@3"
-            }, {
-                "title": "插件api: TextEditor",
-                "id": "TextEditor",
-                "group": "z_commands"
-            }, {
-                "command": "api.uri",
-                "title": "uri: 显示所有uri信息",
-                "group": "TextEditor@1"
-            }, {
-                "group": "TextEditor@1"
-            }, {
-                "command": "api.text_editor",
-                "title": "document: 文件编辑器对象",
-                "group": "TextEditor@1"
-            }, {
-                "command": "api.text_editor_linetext",
-                "title": "selection: 当前光标所在行内容",
-                "group": "TextEditor@2"
-            }, {
-                "command": "api.text_editor_line_to_upper_case",
-                "title": "selection: 当前选中内容，由小写转换大写",
-                "group": "TextEditor@3"
-            }, {
-                "command": "api.text_editor_indent",
-                "title": "options: 获取当前文件缩进符长度",
-                "group": "TextEditor@4"
-            }, {
-                "group": "TextEditor@5"
-            }, {
-                "command": "api.text_lineFromPosition",
-                "title": "lineFromPosition 当前光标所在行内容",
-                "group": "TextEditor@5"
-            }, {
-                "command": "api.text_lineAt",
-                "title": "lineAt 获取指定行(第3行)内容",
-                "group": "TextEditor@5"
-            }, {
-                "command": "api.text_getText",
-                "title": "getText 获取指定区域内容(0,50)",
-                "group": "TextEditor@5"
-            }, {
-                "command": "api.set_selection",
-                "title": "setSelection 增加新的选择区域",
-                "group": "TextEditor@6"
-            }, {
-                "title": "插件api: 问题集合",
-                "id": "Diagnostic",
-                "group": "z_commands"
-            }, {
-                "command": "api.languages_create_diagnostics_collection",
-                "title": "创建问题集合",
-                "group": "Diagnostic@1"
-            }, {
-                "title": "插件api: env",
-                "id": "env",
-                "group": "z_commands"
-            }, {
-                "command": "api.openExternal_url",
-                "title": "打开外部链接",
-                "group": "env@1"
-            }, {
-                "command": "api.openExternal_mail",
-                "title": "发送email",
-                "group": "env@2"
-            }, {
-                "command": "api.clipboard_write",
-                "title": "写入剪切板",
-                "group": "env@3"
-            }, {
-                "command": "api.clipboard_read",
-                "title": "读取剪切板",
-                "group": "env@4"
-            }, {
-                "title": "插件api: authorize",
-                "id": "authorize",
-                "group": "z_commands"
-            }, {
-                "command": "api.authorize_login",
-                "title": "用户登录",
-                "group": "authorize@1"
-            }, {
-                "command": "api.authorize_logout",
-                "title": "用户退出登录",
-                "group": "authorize@2"
-            }, {
-                "command": "api.CustomEditor",
-                "title": "插件api: 自定义编辑器",
-                "group": "z_commands"
-            }, {
-                "title": "插件api: util",
-                "id": "util",
-                "group": "z_commands"
-            }, {
-                "command": "api.util_handleJson",
-                "title": "读写json",
-                "group": "util@1"
-            }, {
-                "group": "z_commands"
-            }]
+            "menubar/tool": [
+                {
+                    "command": "api.CommandPanel",
+                    "title": "HBuilderX API命令面板"
+                }
+            ],
+            "menubar/help": [
+                {
+                    "command": "api.open_help",
+                    "title": "HBuilderX插件开发文档",
+                    "group": "documents"
+                }
+            ],
+            "editor/context": [
+                {
+                    "title": "插件api: commands",
+                    "group": "z_commands",
+                    "id": "builtIn"
+                },
+                {
+                    "command": "api.commands",
+                    "title": "执行内置命令: 关闭所有打开的编辑器",
+                    "group": "builtIn@1"
+                },
+                {
+                    "title": "插件api: 状态栏消息",
+                    "group": "z_commands",
+                    "id": "statusBarMessage"
+                },
+                {
+                    "command": "api.status_bar_info_message",
+                    "title": "info消息",
+                    "group": "statusBarMessage@1"
+                },
+                {
+                    "command": "api.status_bar_error_message",
+                    "title": "error消息",
+                    "group": "statusBarMessage@2"
+                },
+                {
+                    "command": "api.status_bar_warn_message",
+                    "title": "warning消息",
+                    "group": "statusBarMessage@3"
+                },
+                {
+                    "command": "api.status_bar_timeout_message",
+                    "title": "2s后自动隐藏",
+                    "group": "statusBarMessage@4"
+                },
+                {
+                    "command": "api.clear_status_bar_message",
+                    "title": "清空状态栏消息",
+                    "group": "statusBarMessage@5"
+                },
+                {
+                    "title": "插件api: 右下角通知框",
+                    "group": "z_commands",
+                    "id": "message"
+                },
+                {
+                    "command": "api.show_error_message",
+                    "title": "error通知框",
+                    "group": "message@1"
+                },
+                {
+                    "command": "api.show_info_message",
+                    "title": "info通知框",
+                    "group": "message@2"
+                },
+                {
+                    "command": "api.show_warning_message",
+                    "title": "warning通知框",
+                    "group": "message@3"
+                },
+                {
+                    "title": "插件api: window",
+                    "group": "z_commands",
+                    "id": "window"
+                },
+                {
+                    "command": "api.window_show_quick_pick",
+                    "title": "QuickPick",
+                    "group": "window@1"
+                },
+                {
+                    "command": "api.window_create_output_channel",
+                    "title": "创建输出控制台",
+                    "group": "window@2"
+                },
+                {
+                    "command": "api.window_show_input_box",
+                    "title": "显示输入框",
+                    "group": "window@3"
+                },
+                {
+                    "command": "api.window_show_message_box",
+                    "title": "显示对话框",
+                    "group": "window@4"
+                },
+                {
+                    "command": "api.window_WebviewDialog",
+                    "title": "WebviewDialog",
+                    "group": "window@5"
+                },
+                {
+                    "command": "api.window_showFormDialog",
+                    "title": "showFormDialog",
+                    "group": "window@6"
+                },
+                {
+                    "command": "api.window_createStatusBarItem",
+                    "title": "createStatusBarItem",
+                    "group": "window@7"
+                },
+                {
+                    "title": "插件api: workspace",
+                    "id": "workspace",
+                    "group": "z_commands"
+                },
+                {
+                    "command": "api.open_text_document",
+                    "title": "openTextDocument",
+                    "group": "workspace@1"
+                },
+                {
+                    "command": "api.on_will_save_text_document",
+                    "title": "onWillSaveTextDocument",
+                    "group": "workspace@2"
+                },
+                {
+                    "command": "api.on_did_change_text_document",
+                    "title": "onDidChangeTextDocument",
+                    "group": "workspace@3"
+                },
+                {
+                    "command": "api.on_did_save_text_document",
+                    "title": "onDidSaveTextDocument",
+                    "group": "workspace@4"
+                },
+                {
+                    "command": "api.on_did_open_text_document",
+                    "title": "onDidOpenTextDocument",
+                    "group": "workspace@5"
+                },
+                {
+                    "group": "workspace@6"
+                },
+                {
+                    "command": "api.on_did_change_forkspace_folders",
+                    "title": "onDidChangeWorkspaceFolders",
+                    "group": "workspace@6"
+                },
+                {
+                    "command": "api.get_workspace_folders",
+                    "title": "获取项目管理器下所有的项目对象",
+                    "group": "workspace@6"
+                },
+                {
+                    "command": "api.get_workspace_folder",
+                    "title": "获取某个文件所在的项目",
+                    "group": "workspace@6"
+                },
+                {
+                    "group": "workspace@7"
+                },
+                {
+                    "command": "api.workspace_apply_edit",
+                    "title": "applyEdit",
+                    "group": "workspace@7"
+                },
+                {
+                    "group": "workspace@8"
+                },
+                {
+                    "command": "api.workspace_get_configuration",
+                    "title": "获取配置 getConfiguration",
+                    "group": "workspace@9"
+                },
+                {
+                    "command": "api.workspace_update_configuration",
+                    "title": "更新配置 getConfiguration",
+                    "group": "workspace@10"
+                },
+                {
+                    "command": "api.workspace_add_configuration",
+                    "title": "新增配置 getConfiguration",
+                    "group": "workspace@11"
+                },
+                {
+                    "command": "api.on_did_chanage_configuration",
+                    "title": "onDidChangeConfiguration",
+                    "group": "workspace@12"
+                },
+                {
+                    "command": "api.workspace_copy_file_with_prompt",
+                    "title": "copyFileWithPrompt",
+                    "group": "workspace@13"
+                },
+                {
+                    "title": "插件api: getActiveTextEditor",
+                    "id": "getActiveTextEditor",
+                    "group": "z_commands"
+                },
+                {
+                    "command": "api.get_active_text_editor",
+                    "title": "显示当前激活的编辑器名称",
+                    "group": "getActiveTextEditor@1"
+                },
+                {
+                    "command": "api.get_active_text_editor_for_nature",
+                    "title": "获取项目类型",
+                    "group": "getActiveTextEditor@2"
+                },
+                {
+                    "command": "api.get_active_text_editor_for_project_name",
+                    "title": "获取项目名称",
+                    "group": "getActiveTextEditor@3"
+                },
+                {
+                    "title": "插件api: TextEditor",
+                    "id": "TextEditor",
+                    "group": "z_commands"
+                },
+                {
+                    "command": "api.uri",
+                    "title": "uri: 显示所有uri信息",
+                    "group": "TextEditor@1"
+                },
+                {
+                    "group": "TextEditor@1"
+                },
+                {
+                    "command": "api.text_editor",
+                    "title": "document: 文件编辑器对象",
+                    "group": "TextEditor@1"
+                },
+                {
+                    "command": "api.text_editor_linetext",
+                    "title": "selection: 当前光标所在行内容",
+                    "group": "TextEditor@2"
+                },
+                {
+                    "command": "api.text_editor_line_to_upper_case",
+                    "title": "selection: 当前选中内容，由小写转换大写",
+                    "group": "TextEditor@3"
+                },
+                {
+                    "command": "api.text_editor_indent",
+                    "title": "options: 获取当前文件缩进符长度",
+                    "group": "TextEditor@4"
+                },
+                {
+                    "group": "TextEditor@5"
+                },
+                {
+                    "command": "api.text_lineFromPosition",
+                    "title": "lineFromPosition 当前光标所在行内容",
+                    "group": "TextEditor@5"
+                },
+                {
+                    "command": "api.text_lineAt",
+                    "title": "lineAt 获取指定行(第3行)内容",
+                    "group": "TextEditor@5"
+                },
+                {
+                    "command": "api.text_getText",
+                    "title": "getText 获取指定区域内容(0,50)",
+                    "group": "TextEditor@5"
+                },
+                {
+                    "command": "api.set_selection",
+                    "title": "setSelection 增加新的选择区域",
+                    "group": "TextEditor@6"
+                },
+                {
+                    "title": "插件api: 问题集合",
+                    "id": "Diagnostic",
+                    "group": "z_commands"
+                },
+                {
+                    "command": "api.languages_create_diagnostics_collection",
+                    "title": "创建问题集合",
+                    "group": "Diagnostic@1"
+                },
+                {
+                    "title": "插件api: env",
+                    "id": "env",
+                    "group": "z_commands"
+                },
+                {
+                    "command": "api.openExternal_url",
+                    "title": "打开外部链接",
+                    "group": "env@1"
+                },
+                {
+                    "command": "api.openExternal_mail",
+                    "title": "发送email",
+                    "group": "env@2"
+                },
+                {
+                    "command": "api.clipboard_write",
+                    "title": "写入剪切板",
+                    "group": "env@3"
+                },
+                {
+                    "command": "api.clipboard_read",
+                    "title": "读取剪切板",
+                    "group": "env@4"
+                },
+                {
+                    "title": "插件api: authorize",
+                    "id": "authorize",
+                    "group": "z_commands"
+                },
+                {
+                    "command": "api.authorize_login",
+                    "title": "用户登录",
+                    "group": "authorize@1"
+                },
+                {
+                    "command": "api.authorize_logout",
+                    "title": "用户退出登录",
+                    "group": "authorize@2"
+                },
+                {
+                    "command": "api.CustomEditor",
+                    "title": "插件api: 自定义编辑器",
+                    "group": "z_commands"
+                },
+                {
+                    "title": "插件api: util",
+                    "id": "util",
+                    "group": "z_commands"
+                },
+                {
+                    "command": "api.util_handleJson",
+                    "title": "读写json",
+                    "group": "util@1"
+                },
+                {
+                    "title": "插件api: Vue扩展示例",
+                    "command": "api.vueUI",
+                    "group": "z_commands"
+                },
+                {
+                    "group": "z_commands"
+                }
+            ]
         }
     },
-    "extensionDependencies": ["plugin-manager"],
+    "extensionDependencies": [
+        "plugin-manager"
+    ],
     "dependencies": {}
 }
